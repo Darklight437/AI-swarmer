@@ -16,6 +16,9 @@
     <Filter Include="Source Files\Gameobjects &amp; variants">
       <UniqueIdentifier>{d7e51c42-da2d-4ce9-b123-18c00338430f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\pathfinding">
+      <UniqueIdentifier>{b9755e3e-51eb-48b9-a9bf-53da8c3e7e46}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\WinMain.cpp">
@@ -30,6 +33,15 @@
     <ClCompile Include="master.cpp">
       <Filter>Source Files\Gameobjects &amp; variants</Filter>
     </ClCompile>
+    <ClCompile Include="Pathing_node.cpp">
+      <Filter>Source Files\pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="Pathing_edge.cpp">
+      <Filter>Source Files\pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="Node_holder.cpp">
+      <Filter>Source Files\pathfinding</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Gameobject.h">
@@ -40,6 +52,15 @@
     </ClInclude>
     <ClInclude Include="master.h">
       <Filter>Source Files\Gameobjects &amp; variants</Filter>
+    </ClInclude>
+    <ClInclude Include="Pathing_node.h">
+      <Filter>Source Files\pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="Pathing_edge.h">
+      <Filter>Source Files\pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="Node_holder.h">
+      <Filter>Source Files\pathfinding</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

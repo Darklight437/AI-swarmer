@@ -108,12 +108,18 @@
   <ItemGroup>
     <ClCompile Include="Gameobject.cpp" />
     <ClCompile Include="master.cpp" />
+    <ClCompile Include="Node_holder.cpp" />
+    <ClCompile Include="Pathing_edge.cpp" />
+    <ClCompile Include="Pathing_node.cpp" />
     <ClCompile Include="source\WinMain.cpp" />
     <ClCompile Include="Swarmer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Gameobject.h" />
     <ClInclude Include="master.h" />
+    <ClInclude Include="Node_holder.h" />
+    <ClInclude Include="Pathing_edge.h" />
+    <ClInclude Include="Pathing_node.h" />
     <ClInclude Include="Swarmer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
