@@ -2,6 +2,11 @@
 
 
 
+void master::loadSprite()
+{
+    m_texture.loadFromFile("rocket-drone.png");
+}
+
 master::master()
 {
 }
