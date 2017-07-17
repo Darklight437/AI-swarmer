@@ -3,7 +3,7 @@
 
 int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine, int cmdShow)
 {
-    sf::RenderWindow window(sf::VideoMode(1680, 1050), "SFML works!");
+    sf::RenderWindow window(sf::VideoMode(800, 600), "Swarmlings");
 
 
     while (window.isOpen())

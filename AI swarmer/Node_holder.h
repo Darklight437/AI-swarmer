@@ -11,7 +11,7 @@ public:
 
 private:
 
-    std::list<Pathing_node> nodelist;
+    std::list<Pathing_node> m_nodelist;
     
 
 };

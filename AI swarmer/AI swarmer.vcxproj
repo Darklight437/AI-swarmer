@@ -73,8 +73,9 @@
       </Command>
     </CustomBuildStep>
     <PostBuildEvent>
-      <Command>xcopy "$(SolutionDir)\exe_dependencies\*" "$(ProjectDir)\bin\" /E /Y</Command>
-      <Message>copies the dependancies file in case of overwrite</Message>
+      <Command>
+      </Command>
+      <Message>broken</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -101,8 +102,9 @@
       </Command>
     </CustomBuildStep>
     <PostBuildEvent>
-      <Command>xcopy "$(SolutionDir)\exe_dependencies\*" "$(ProjectDir)\bin\" /E /Y</Command>
-      <Message>copies the dependancies file in case of overwrite</Message>
+      <Command>
+      </Command>
+      <Message>broken</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
