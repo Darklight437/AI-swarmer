@@ -13,10 +13,33 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Gameobjects &amp; variants">
+      <UniqueIdentifier>{d7e51c42-da2d-4ce9-b123-18c00338430f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\WinMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Gameobject.cpp">
+      <Filter>Source Files\Gameobjects &amp; variants</Filter>
+    </ClCompile>
+    <ClCompile Include="Swarmer.cpp">
+      <Filter>Source Files\Gameobjects &amp; variants</Filter>
+    </ClCompile>
+    <ClCompile Include="master.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Gameobject.h">
+      <Filter>Source Files\Gameobjects &amp; variants</Filter>
+    </ClInclude>
+    <ClInclude Include="Swarmer.h">
+      <Filter>Source Files\Gameobjects &amp; variants</Filter>
+    </ClInclude>
+    <ClInclude Include="master.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

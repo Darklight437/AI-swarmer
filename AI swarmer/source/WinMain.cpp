@@ -4,8 +4,7 @@
 int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine, int cmdShow)
 {
     sf::RenderWindow window(sf::VideoMode(1680, 1050), "SFML works!");
-    //sf::CircleShape shape(100.f);
-    //shape.setFillColor(sf::Color::Green);
+
 
     while (window.isOpen())
     {
@@ -17,6 +16,9 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
         }
 
         window.clear();
+        //tell objects to draw here
+        
+
         //window.draw(shape);
         window.display();
     }
