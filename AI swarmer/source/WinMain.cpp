@@ -1,5 +1,4 @@
 #include <Windows.h>
-#include "Node_holder.cpp"
 #include <SFML/Graphics.hpp>
 
 int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine, int cmdShow)

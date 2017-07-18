@@ -7,8 +7,9 @@ public:
     Node_holder();
     ~Node_holder();
 
-
     std::list<Pathing_node> m_nodelist;
+
+    std::list<Pathing_node*> m_nodeptrs;
 
 
     

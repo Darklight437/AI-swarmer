@@ -9,7 +9,7 @@ public:
     Pathing_Walker();
     ~Pathing_Walker();
 
-    void Astar(Pathing_node startNode, Pathing_node endNode);
+    void Astar(Pathing_node* startNode, Pathing_node* endNode);
 
 
 };
