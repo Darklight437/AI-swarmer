@@ -1,9 +1,12 @@
 #include <Windows.h>
+#include "Node_holder.cpp"
 #include <SFML/Graphics.hpp>
 
 int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine, int cmdShow)
 {
     sf::RenderWindow window(sf::VideoMode(800, 600), "Swarmlings");
+
+    // run startup constructor for the game(sorta)
 
 
     while (window.isOpen())
@@ -19,7 +22,11 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
         //tell objects to draw here
         
 
-        //window.draw(shape);
+
+
+
+
+
         window.display();
     }
 

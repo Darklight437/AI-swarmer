@@ -1,4 +1,7 @@
 #pragma once
+//forward dec
+class Pathing_node;
+
 class Pathing_edge
 {
 public:
@@ -7,5 +10,6 @@ public:
     float getCost();
 private:
     float m_cost;
+    Pathing_node* target;
 };
 
