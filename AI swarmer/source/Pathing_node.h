@@ -14,5 +14,6 @@ public:
     float Gscore;
     float Hscore;
     float Fscore;
+    bool isWalkable;
 };
 
