@@ -24,42 +24,48 @@
     <ClCompile Include="source\WinMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Gameobject.cpp">
+    <ClCompile Include="source\Gameobject.cpp">
       <Filter>Source Files\Gameobjects &amp; variants</Filter>
     </ClCompile>
-    <ClCompile Include="Swarmer.cpp">
+    <ClCompile Include="source\master.cpp">
       <Filter>Source Files\Gameobjects &amp; variants</Filter>
     </ClCompile>
-    <ClCompile Include="master.cpp">
+    <ClCompile Include="source\Swarmer.cpp">
       <Filter>Source Files\Gameobjects &amp; variants</Filter>
     </ClCompile>
-    <ClCompile Include="Pathing_node.cpp">
+    <ClCompile Include="source\Node_holder.cpp">
       <Filter>Source Files\pathfinding</Filter>
     </ClCompile>
-    <ClCompile Include="Pathing_edge.cpp">
+    <ClCompile Include="source\Pathing_edge.cpp">
       <Filter>Source Files\pathfinding</Filter>
     </ClCompile>
-    <ClCompile Include="Node_holder.cpp">
+    <ClCompile Include="source\Pathing_node.cpp">
+      <Filter>Source Files\pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="Pathing_Walker.cpp">
       <Filter>Source Files\pathfinding</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Gameobject.h">
+    <ClInclude Include="source\Gameobject.h">
       <Filter>Source Files\Gameobjects &amp; variants</Filter>
     </ClInclude>
-    <ClInclude Include="Swarmer.h">
+    <ClInclude Include="source\master.h">
       <Filter>Source Files\Gameobjects &amp; variants</Filter>
     </ClInclude>
-    <ClInclude Include="master.h">
+    <ClInclude Include="source\Swarmer.h">
       <Filter>Source Files\Gameobjects &amp; variants</Filter>
     </ClInclude>
-    <ClInclude Include="Pathing_node.h">
+    <ClInclude Include="source\Node_holder.h">
       <Filter>Source Files\pathfinding</Filter>
     </ClInclude>
-    <ClInclude Include="Pathing_edge.h">
+    <ClInclude Include="source\Pathing_edge.h">
       <Filter>Source Files\pathfinding</Filter>
     </ClInclude>
-    <ClInclude Include="Node_holder.h">
+    <ClInclude Include="source\Pathing_node.h">
+      <Filter>Source Files\pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="Pathing_Walker.h">
       <Filter>Source Files\pathfinding</Filter>
     </ClInclude>
   </ItemGroup>

@@ -10,8 +10,10 @@ public:
     virtual void loadSprite() = 0;
     std::string getExecutableFolder() const;
 
+
 protected:
     sf::Texture m_texture;
+
 
 };
 

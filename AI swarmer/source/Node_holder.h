@@ -8,10 +8,10 @@ public:
     ~Node_holder();
 
 
-
-private:
-
     std::list<Pathing_node> m_nodelist;
+
+
+    
     
 
 };

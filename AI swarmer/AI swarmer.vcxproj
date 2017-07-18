@@ -108,21 +108,23 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Gameobject.cpp" />
-    <ClCompile Include="master.cpp" />
-    <ClCompile Include="Node_holder.cpp" />
-    <ClCompile Include="Pathing_edge.cpp" />
-    <ClCompile Include="Pathing_node.cpp" />
+    <ClCompile Include="Pathing_Walker.cpp" />
+    <ClCompile Include="source\Gameobject.cpp" />
+    <ClCompile Include="source\master.cpp" />
+    <ClCompile Include="source\Node_holder.cpp" />
+    <ClCompile Include="source\Pathing_edge.cpp" />
+    <ClCompile Include="source\Pathing_node.cpp" />
+    <ClCompile Include="source\Swarmer.cpp" />
     <ClCompile Include="source\WinMain.cpp" />
-    <ClCompile Include="Swarmer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Gameobject.h" />
-    <ClInclude Include="master.h" />
-    <ClInclude Include="Node_holder.h" />
-    <ClInclude Include="Pathing_edge.h" />
-    <ClInclude Include="Pathing_node.h" />
-    <ClInclude Include="Swarmer.h" />
+    <ClInclude Include="Pathing_Walker.h" />
+    <ClInclude Include="source\Gameobject.h" />
+    <ClInclude Include="source\master.h" />
+    <ClInclude Include="source\Node_holder.h" />
+    <ClInclude Include="source\Pathing_edge.h" />
+    <ClInclude Include="source\Pathing_node.h" />
+    <ClInclude Include="source\Swarmer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
