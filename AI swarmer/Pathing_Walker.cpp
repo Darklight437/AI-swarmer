@@ -36,14 +36,20 @@ void Pathing_Walker::Astar(Pathing_node* startNode, Pathing_node* endNode)
     while (!openSet.m_nodeptrs.empty())
     {
         Pathing_node* current;
-        current = openSet.m_nodeptrs.front();//incorrect but i builds for now so shh
+        current = openSet.m_nodeptrs.front();//incorrect should get the lowest Fscore node
         if (current == endNode)
         {
             buildPath(current, startNode);
+            //probably break out here or something
         }
         
-        //openSet.m_nodeptrs.remove
-        
+        //openSet.m_nodeptrs.remove(current)
+        closedSet.m_nodeptrs.push_front(current);
+
+        for each (Pathing_edge curredge in current->connections)
+        {
+
+        }
 
         if (startNode == endNode)
         {   
