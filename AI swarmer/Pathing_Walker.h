@@ -11,7 +11,7 @@ public:
     ~Pathing_Walker();
 
     void Astar(Pathing_node* startNode, Pathing_node* endNode);
-    
+    void buildPath(Pathing_node* start, Pathing_node* end);
 
 };
 

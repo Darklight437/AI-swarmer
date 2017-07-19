@@ -30,12 +30,19 @@ void Pathing_Walker::Astar(Pathing_node* startNode, Pathing_node* endNode)
     startNode->m_parent = nullptr;
     startNode->Gscore = 0;
 
-    while (true)
-    {
 
-        std::sort(openSet.m_nodeptrs.front(), openSet.m_nodeptrs.back(), sortNodePtrs());
+    openSet.m_nodeptrs.push_front(startNode);
+
+    while (!openSet.m_nodeptrs.empty())
+    {
+        Pathing_node* current;
+
+        if (current == endNode)
+        {
+            buildPath(current, startNode);
+        }
         
-        openSet.m_nodeptrs.push_front(startNode);
+        
 
         if (startNode == endNode)
         {   

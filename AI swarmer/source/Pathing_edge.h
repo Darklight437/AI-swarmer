@@ -10,6 +10,7 @@ public:
     float getCost();
 private:
     float m_cost;
-    Pathing_node* target;
+    Pathing_node* Node1;
+    Pathing_node* Node2;
 };
 
