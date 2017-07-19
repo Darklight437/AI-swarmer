@@ -46,9 +46,9 @@ void Pathing_Walker::Astar(Pathing_node* startNode, Pathing_node* endNode)
         //openSet.m_nodeptrs.remove(current)
         closedSet.m_nodeptrs.push_front(current);
 
-        for each (Pathing_edge curredge in current->connections)
+        for each (Pathing_edge* curredge in current->connections)
         {
-
+            if (curredge->)
         }
 
         if (startNode == endNode)

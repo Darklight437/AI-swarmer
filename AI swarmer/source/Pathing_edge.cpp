@@ -15,3 +15,9 @@ float Pathing_edge::getCost()
 {
     return m_cost;
 }
+
+edgeLinks Pathing_edge::getEdges()
+{
+    
+    return edgeLinks();
+}
