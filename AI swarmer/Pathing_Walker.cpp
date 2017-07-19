@@ -10,7 +10,7 @@ Pathing_Walker::Pathing_Walker()
 Pathing_Walker::~Pathing_Walker()
 {
 }
-
+//like this but not borked??
 struct sortNodePtrs
 {
     inline bool operator() (const Pathing_node& node1, const Pathing_node& node2)
@@ -36,12 +36,13 @@ void Pathing_Walker::Astar(Pathing_node* startNode, Pathing_node* endNode)
     while (!openSet.m_nodeptrs.empty())
     {
         Pathing_node* current;
-
+        current = openSet.m_nodeptrs.front();//incorrect but i builds for now so shh
         if (current == endNode)
         {
             buildPath(current, startNode);
         }
         
+        //openSet.m_nodeptrs.remove
         
 
         if (startNode == endNode)
@@ -50,6 +51,12 @@ void Pathing_Walker::Astar(Pathing_node* startNode, Pathing_node* endNode)
         }
 
     }
+}
+
+void Pathing_Walker::buildPath(Pathing_node * start, Pathing_node * end)
+{
+    //lol idk
+    return;//no clue
 }
 
 
