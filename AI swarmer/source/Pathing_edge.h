@@ -10,14 +10,15 @@ public:
     Pathing_edge();
     ~Pathing_edge();
     float getCost();
-    edgeLinks getEdges();
-private:
+    Pathing_node* Node1;
+    Pathing_node* Node2;
     float m_cost;
-    struct edgeLinks
-    {
-        Pathing_node* Node1;
-        Pathing_node* Node2;
 
-    };
+private:
+
+   
+        
+
+
 };
 

@@ -10,33 +10,26 @@ Pathing_Walker::Pathing_Walker()
 Pathing_Walker::~Pathing_Walker()
 {
 }
-//like this but not borked??
-struct sortNodePtrs
-{
-    inline bool operator() (const Pathing_node& node1, const Pathing_node& node2)
-    {
-        return (node1.Fscore < node2.Fscore);
-    }
-};
 
 
 
 
 void Pathing_Walker::Astar(Pathing_node* startNode, Pathing_node* endNode)
 {
-    Node_holder closedSet;
-    Node_holder openSet;
+    std::list<Pathing_node*> closedSet;
+    std::list<Pathing_node*> openSet;
 
-    startNode->m_parent = nullptr;
+    startNode->m_previous = nullptr;
     startNode->Gscore = 0;
 
 
-    openSet.m_nodeptrs.push_front(startNode);
+    openSet.push_front(startNode);
 
-    while (!openSet.m_nodeptrs.empty())
+    while (!openSet.empty())
     {
         Pathing_node* current;
-        current = openSet.m_nodeptrs.front();//incorrect should get the lowest Fscore node
+        //find the lowest fscore node
+        //current = //write a loop to find the lowest
         if (current == endNode)
         {
             buildPath(current, startNode);
@@ -44,7 +37,7 @@ void Pathing_Walker::Astar(Pathing_node* startNode, Pathing_node* endNode)
         }
         
         //openSet.m_nodeptrs.remove(current)
-        closedSet.m_nodeptrs.push_front(current);
+        closedSet.push_front(current);
 
         for each (Pathing_edge* curredge in current->connections)
         {
@@ -63,6 +56,19 @@ void Pathing_Walker::buildPath(Pathing_node * start, Pathing_node * end)
 {
     //lol idk
     return;//no clue
+}
+//return the lowest Fscore 
+{
+
+
+    {
+        if (lowest->Fscore > current->Fscore)
+        {
+            lowest = current;
+        }
+
+    }
+    return nullptr;
 }
 
 
