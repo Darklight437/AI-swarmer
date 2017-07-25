@@ -60,20 +60,28 @@ void Pathing_Walker::buildPath(Pathing_node * start, Pathing_node * end)
 //return the lowest Fscore 
 Pathing_node * Pathing_Walker::bestScore(std::list<Pathing_node*> openList)
 {
-    Pathing_node* lowest = openList.front;
-    Pathing_node* current = openList.front;
+    Pathing_node* lowest = openList.front();
+    Pathing_node* current = openList.front();
 
-
-    //use iterators 
-    for (int i = 0; i < openList.size; i++)
+    for (std::list<Pathing_node>::iterator it = openList.begin; it != openList.end; ++it)
     {
+        current = &*it;
         if (lowest->Fscore > current->Fscore)
         {
-            lowest = current;
+            lowest = current
         }
-
-        current = openList.
     }
+
+    ////use iterators 
+    //for (int i = 0; i < openList.size; i++)
+    //{
+    //    if (lowest->Fscore > current->Fscore)
+    //    {
+    //        lowest = current;
+    //    }
+
+    //    current = openList.
+    //}
     return nullptr;
 }
 

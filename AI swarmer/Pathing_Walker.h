@@ -1,7 +1,6 @@
 #pragma once
 #include <algorithm>
 #include <list>
-#include "source\Node_holder.h"
 #include "source\Pathing_node.h"
 #include "source\Pathing_edge.h"
 

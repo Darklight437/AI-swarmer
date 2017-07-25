@@ -111,7 +111,6 @@
     <ClCompile Include="Pathing_Walker.cpp" />
     <ClCompile Include="source\Gameobject.cpp" />
     <ClCompile Include="source\master.cpp" />
-    <ClCompile Include="source\Node_holder.cpp" />
     <ClCompile Include="source\Pathing_edge.cpp" />
     <ClCompile Include="source\Pathing_node.cpp" />
     <ClCompile Include="source\Swarmer.cpp" />
@@ -121,7 +120,6 @@
     <ClInclude Include="Pathing_Walker.h" />
     <ClInclude Include="source\Gameobject.h" />
     <ClInclude Include="source\master.h" />
-    <ClInclude Include="source\Node_holder.h" />
     <ClInclude Include="source\Pathing_edge.h" />
     <ClInclude Include="source\Pathing_node.h" />
     <ClInclude Include="source\Swarmer.h" />

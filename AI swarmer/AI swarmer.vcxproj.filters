@@ -33,9 +33,6 @@
     <ClCompile Include="source\Swarmer.cpp">
       <Filter>Source Files\Gameobjects &amp; variants</Filter>
     </ClCompile>
-    <ClCompile Include="source\Node_holder.cpp">
-      <Filter>Source Files\pathfinding</Filter>
-    </ClCompile>
     <ClCompile Include="source\Pathing_edge.cpp">
       <Filter>Source Files\pathfinding</Filter>
     </ClCompile>
@@ -55,9 +52,6 @@
     </ClInclude>
     <ClInclude Include="source\Swarmer.h">
       <Filter>Source Files\Gameobjects &amp; variants</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Node_holder.h">
-      <Filter>Source Files\pathfinding</Filter>
     </ClInclude>
     <ClInclude Include="source\Pathing_edge.h">
       <Filter>Source Files\pathfinding</Filter>
