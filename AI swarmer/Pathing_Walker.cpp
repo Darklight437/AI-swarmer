@@ -100,6 +100,7 @@ std::list<Pathing_node*> Pathing_Walker::generateNodes()
 
 
         //figure out how to find if there are other nodes nearby
+        //get an add edges function
     }
 
 

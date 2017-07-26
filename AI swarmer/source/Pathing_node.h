@@ -10,13 +10,22 @@ public:
     ~Pathing_node();
     //the node that this node can be most efficiently reached from
     Pathing_node* m_previous;
-    //all nodes this node is connected to
-    std::vector<Pathing_edge*> connections;
+
+
+
     
+    //render me function
+    void draw();
+    //add edges function
+    void addEdges();
+
+
     float Gscore;
     float Hscore;
     float Fscore;
     bool isWalkable;
+    //all nodes this node is connected to
+    std::vector<Pathing_edge*> connections;
 
 };
 
