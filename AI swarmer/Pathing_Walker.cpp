@@ -14,7 +14,7 @@ Pathing_Walker::~Pathing_Walker()
 
 
 
-void Pathing_Walker::Astar(std::list<Pathing_node*> allNodes, Pathing_node* startNode, Pathing_node* targetNode)
+void Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Pathing_node* targetNode)
 {
     std::list<Pathing_node*> closedSet;
     std::list<Pathing_node*> openSet;
@@ -60,7 +60,7 @@ void Pathing_Walker::buildPath(Pathing_node * start, Pathing_node * end)
     return;//no clue
 }
 //return the lowest Fscore 
-Pathing_node * Pathing_Walker::bestScore(std::list<Pathing_node*> openList)
+Pathing_node * Pathing_Walker::bestScore(NodeList openList)
 {
     Pathing_node* lowest = openList.front();
     Pathing_node* current = openList.front();
@@ -90,16 +90,21 @@ Pathing_node * Pathing_Walker::bestScore(std::list<Pathing_node*> openList)
 
 std::list<Pathing_node*> Pathing_Walker::generateNodes()
 {
-    std::list<Pathing_node*> nodes;
+    NodeList nodes;
     for (int i = 0; i < 100; i++)
     {
         //make a node
+        Pathing_node* fooptr = new Pathing_node;
+        nodes.push_back(fooptr);
 
+
+
+        //figure out how to find if there are other nodes nearby
     }
 
 
     //return a list of 100 nodes connected to each other including diagonals
-    return std::list<Pathing_node*>();
+    return nodes;
 }
 
 
