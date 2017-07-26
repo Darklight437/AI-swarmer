@@ -14,11 +14,11 @@ Pathing_Walker::~Pathing_Walker()
 
 
 
-void Pathing_Walker::Astar(Pathing_node* startNode, Pathing_node* endNode)
+void Pathing_Walker::Astar(std::list<Pathing_node*> allNodes, Pathing_node* startNode, Pathing_node* targetNode)
 {
     std::list<Pathing_node*> closedSet;
     std::list<Pathing_node*> openSet;
-
+    
     startNode->m_previous = nullptr;
     startNode->Gscore = 0;
 
@@ -29,7 +29,7 @@ void Pathing_Walker::Astar(Pathing_node* startNode, Pathing_node* endNode)
     {
         Pathing_node* current;
         //find the lowest fscore node
-        //current = //write a loop to find the lowest
+        current = bestScore(openSet);
         if (current == endNode)
         {
             buildPath(current, startNode);
@@ -65,6 +65,7 @@ Pathing_node * Pathing_Walker::bestScore(std::list<Pathing_node*> openList)
 
     for (std::list<Pathing_node*>::iterator it = openList.begin(); it != openList.end(); ++it)
     {
+
         current = *it;
         if (lowest->Fscore > current->Fscore)
         {
@@ -74,14 +75,15 @@ Pathing_node * Pathing_Walker::bestScore(std::list<Pathing_node*> openList)
         {
             if (lowest->Hscore > current->Hscore)
             {
-
+                lowest = current;
             }
+            
         }
         
     }
 
     
-    return nullptr;
+    return lowest;
 }
 
 
