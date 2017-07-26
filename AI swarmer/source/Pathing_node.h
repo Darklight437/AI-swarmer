@@ -1,8 +1,14 @@
 #pragma once
-#include <vector>
+#include <list>
 #include <SFML\Graphics.hpp>
-
 #include "Pathing_edge.h"
+
+
+
+class Pathing_node;
+typedef std::list<Pathing_node*> NodeList;
+
+
 class Pathing_node
 {
 public:
@@ -25,7 +31,7 @@ public:
     float Fscore;
     bool isWalkable;
     //all nodes this node is connected to
-    std::vector<Pathing_edge*> connections;
+    NodeList connections;
 
 };
 

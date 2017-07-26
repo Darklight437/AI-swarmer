@@ -16,8 +16,8 @@ Pathing_Walker::~Pathing_Walker()
 
 void Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Pathing_node* targetNode)
 {
-    std::list<Pathing_node*> closedSet;
-    std::list<Pathing_node*> openSet;
+    NodeList closedSet;
+    NodeList openSet;
     
     startNode->m_previous = nullptr;
     startNode->Gscore = 0;
@@ -37,14 +37,16 @@ void Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Pathing_n
             //probably break out here or something
         }
         
-        //openSet.m_nodeptrs.remove(current)
+
+        //get all connected nodes
+       
+        NodeList connectedNodes = current->connections;
+        
+        openSet.remove(current);
+      
+
         closedSet.push_front(current);
-/*
-        for each (Pathing_edge* curredge in current->connections)
-        {
-            if (curredge->)
-        }
-*/
+       
         if (startNode == targetNode)
         {   
             //break and explode
@@ -78,13 +80,10 @@ Pathing_node * Pathing_Walker::bestScore(NodeList openList)
             if (lowest->Hscore > current->Hscore)
             {
                 lowest = current;
-            }
-            
+            }            
         }
-        
     }
 
-    
     return lowest;
 }
 
@@ -109,8 +108,10 @@ std::list<Pathing_node*> Pathing_Walker::generateNodes()
     return nodes;
 }
 
-void Pathing_Walker::addEdges()
+void Pathing_Walker::addEdges(Pathing_node*)
 {
+
+    
 }
 
 
