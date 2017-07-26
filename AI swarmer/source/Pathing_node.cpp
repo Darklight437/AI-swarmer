@@ -16,6 +16,4 @@ void Pathing_node::draw()
 
 }
 
-void Pathing_node::addEdges()
-{
-}
+

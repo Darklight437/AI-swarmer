@@ -20,6 +20,8 @@ public:
     Pathing_node* bestScore(NodeList openList);
     //generates a default node block
     std::list<Pathing_node*> generateNodes();
+    //adds edges for a given node if there are other nodes present
+    void addEdges();
 
 };
 

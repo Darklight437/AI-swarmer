@@ -101,11 +101,16 @@ std::list<Pathing_node*> Pathing_Walker::generateNodes()
 
         //figure out how to find if there are other nodes nearby
         //get an add edges function
+        
     }
 
 
     //return a list of 100 nodes connected to each other including diagonals
     return nodes;
+}
+
+void Pathing_Walker::addEdges()
+{
 }
 
 

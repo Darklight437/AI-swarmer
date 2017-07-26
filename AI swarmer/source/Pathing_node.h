@@ -16,8 +16,8 @@ public:
     
     //render me function
     void draw();
-    //add edges function
-    void addEdges();
+
+
 
 
     float Gscore;
