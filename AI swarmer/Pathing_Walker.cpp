@@ -30,7 +30,8 @@ void Pathing_Walker::Astar(std::list<Pathing_node*> allNodes, Pathing_node* star
         Pathing_node* current;
         //find the lowest fscore node
         current = bestScore(openSet);
-        if (current == endNode)
+        //if you find the end
+        if (current == targetNode)
         {
             buildPath(current, startNode);
             //probably break out here or something
@@ -38,14 +39,15 @@ void Pathing_Walker::Astar(std::list<Pathing_node*> allNodes, Pathing_node* star
         
         //openSet.m_nodeptrs.remove(current)
         closedSet.push_front(current);
-
+/*
         for each (Pathing_edge* curredge in current->connections)
         {
             if (curredge->)
         }
-
-        if (startNode == endNode)
+*/
+        if (startNode == targetNode)
         {   
+            //break and explode
             return;
         }
 
@@ -54,7 +56,7 @@ void Pathing_Walker::Astar(std::list<Pathing_node*> allNodes, Pathing_node* star
 
 void Pathing_Walker::buildPath(Pathing_node * start, Pathing_node * end)
 {
-    //lol idk
+    //follow the pointers back through the nodes to find the strat from the end and then return this in some form
     return;//no clue
 }
 //return the lowest Fscore 
@@ -84,6 +86,20 @@ Pathing_node * Pathing_Walker::bestScore(std::list<Pathing_node*> openList)
 
     
     return lowest;
+}
+
+std::list<Pathing_node*> Pathing_Walker::generateNodes()
+{
+    std::list<Pathing_node*> nodes;
+    for (int i = 0; i < 100; i++)
+    {
+        //make a node
+
+    }
+
+
+    //return a list of 100 nodes connected to each other including diagonals
+    return std::list<Pathing_node*>();
 }
 
 

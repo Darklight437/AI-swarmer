@@ -1,5 +1,7 @@
 #pragma once
 #include <vector>
+#include <SFML\Graphics.hpp>
+
 #include "Pathing_edge.h"
 class Pathing_node
 {
@@ -15,5 +17,6 @@ public:
     float Hscore;
     float Fscore;
     bool isWalkable;
+
 };
 
