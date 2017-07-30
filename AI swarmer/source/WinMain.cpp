@@ -1,3 +1,6 @@
+
+#include "Gameobject.h"
+#include "Pathing_Walker.h"
 #include <Windows.h>
 #include <SFML/Graphics.hpp>
 
