@@ -1,8 +1,8 @@
 #pragma once
 #include <algorithm>
 #include <list>
-#include "source\Pathing_node.h"
-#include "source\Pathing_edge.h"
+#include "Pathing_node.h"
+#include "Pathing_edge.h"
 
 typedef std::list<Pathing_node*> NodeList;
 

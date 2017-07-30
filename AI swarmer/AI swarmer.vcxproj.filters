@@ -39,7 +39,7 @@
     <ClCompile Include="source\Pathing_node.cpp">
       <Filter>Source Files\pathfinding</Filter>
     </ClCompile>
-    <ClCompile Include="Pathing_Walker.cpp">
+    <ClCompile Include="source\Pathing_Walker.cpp">
       <Filter>Source Files\pathfinding</Filter>
     </ClCompile>
   </ItemGroup>
@@ -59,7 +59,7 @@
     <ClInclude Include="source\Pathing_node.h">
       <Filter>Source Files\pathfinding</Filter>
     </ClInclude>
-    <ClInclude Include="Pathing_Walker.h">
+    <ClInclude Include="source\Pathing_Walker.h">
       <Filter>Source Files\pathfinding</Filter>
     </ClInclude>
   </ItemGroup>
