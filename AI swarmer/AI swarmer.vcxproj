@@ -108,6 +108,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Behavior.cpp" />
     <ClCompile Include="source\Agent.cpp" />
     <ClCompile Include="source\Gameobject.cpp" />
     <ClCompile Include="source\master.cpp" />
@@ -118,6 +119,7 @@
     <ClCompile Include="source\WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Behavior.h" />
     <ClInclude Include="source\Agent.h" />
     <ClInclude Include="source\Gameobject.h" />
     <ClInclude Include="source\master.h" />
