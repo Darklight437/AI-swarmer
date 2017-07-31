@@ -7,6 +7,11 @@ Gameobject::Gameobject()
     
 }
 
+Gameobject::Gameobject(std::string spriteFileName)
+{
+
+}
+
 
 Gameobject::~Gameobject()
 {
@@ -25,3 +30,4 @@ std::string Gameobject::getExecutableFolder() const
 
     return buffer;
 }
+
