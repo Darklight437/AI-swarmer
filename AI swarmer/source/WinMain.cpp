@@ -9,7 +9,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
     sf::RenderWindow window(sf::VideoMode(800, 600), "Swarmlings");
 
     // run startup constructor for the game(sorta)
-    Gameobject* Testobject = new Gameobject(Gameobject::getExecutableFolder() + "\\sprites\\rocket-drone.png");
+    //Gameobject* Agent = new Gameobject(Gameobject::getExecutableFolder() + "\\sprites\\rocket-drone.png");
 
     while (window.isOpen())
     {
@@ -23,7 +23,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
         window.clear();
         //tell objects to draw here
         
-        window.draw(Testobject->m_sprite);
+        //window.draw(Agent->m_sprite);
 
 
 

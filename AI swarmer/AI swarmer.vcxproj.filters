@@ -42,6 +42,9 @@
     <ClCompile Include="source\Pathing_Walker.cpp">
       <Filter>Source Files\pathfinding</Filter>
     </ClCompile>
+    <ClCompile Include="source\Agent.cpp">
+      <Filter>Source Files\Gameobjects &amp; variants</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Gameobject.h">
@@ -61,6 +64,9 @@
     </ClInclude>
     <ClInclude Include="source\Pathing_Walker.h">
       <Filter>Source Files\pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Agent.h">
+      <Filter>Source Files\Gameobjects &amp; variants</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
