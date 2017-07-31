@@ -1,10 +1,14 @@
 #pragma once
-#include "Gameobject.h"
-class Agent :
-    public Gameobject
+#include <SFML\Graphics\Transformable.hpp>
+class Agent
 {
 public:
     Agent();
     ~Agent();
+
+
+
+    float currBehavior;
+    
 };
 
