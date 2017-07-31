@@ -8,10 +8,10 @@ public:
     Gameobject();
     Gameobject(std::string spriteFileName);
     virtual ~Gameobject();
-    virtual void loadSprite() = 0;
-    std::string getExecutableFolder() const;
+    //virtual void loadSprite() = 0;
+  static std::string getExecutableFolder();
 
-
+  sf::Sprite m_sprite;
 protected:
     sf::Texture m_texture;
 
