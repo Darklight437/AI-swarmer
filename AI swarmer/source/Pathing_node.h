@@ -18,14 +18,13 @@ public:
     Pathing_node* m_previous;
 
 
-
     
     //render me function
     void draw();
 
 
-
-
+    sf::CircleShape circle;
+    sf::Vector2f m_position;
     float Gscore;
     float Hscore;
     float Fscore;
