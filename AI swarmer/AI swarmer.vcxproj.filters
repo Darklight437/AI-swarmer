@@ -19,6 +19,9 @@
     <Filter Include="Source Files\pathfinding">
       <UniqueIdentifier>{b9755e3e-51eb-48b9-a9bf-53da8c3e7e46}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Gameobjects &amp; variants\Behaviors">
+      <UniqueIdentifier>{e9220e98-3b3d-4152-b5e9-afc9a647a086}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\WinMain.cpp">
@@ -46,7 +49,7 @@
       <Filter>Source Files\Gameobjects &amp; variants</Filter>
     </ClCompile>
     <ClCompile Include="source\Behavior.cpp">
-      <Filter>Source Files\Gameobjects &amp; variants</Filter>
+      <Filter>Source Files\Gameobjects &amp; variants\Behaviors</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -72,7 +75,7 @@
       <Filter>Source Files\Gameobjects &amp; variants</Filter>
     </ClInclude>
     <ClInclude Include="source\Behavior.h">
-      <Filter>Source Files\Gameobjects &amp; variants</Filter>
+      <Filter>Source Files\Gameobjects &amp; variants\Behaviors</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -3,7 +3,7 @@ class Behavior
 {
 public:
     Behavior();
-    ~Behavior();
+    virtual ~Behavior();
 
 
 };
