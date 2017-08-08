@@ -40,7 +40,7 @@ void Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Pathing_n
 
         //get all connected nodes
        
-        NodeList connectedNodes = current->connections;
+     //   NodeList connectedNodes = current->connections;
         
         openSet.remove(current);
       
