@@ -1,7 +1,8 @@
 #pragma once
-#include <SFML\Graphics\Transformable.hpp>
+//#include <SFML\Graphics\Transformable.hpp>
 #include <vector>
-#include"Behavior.h"
+#include "Behavior.h"
+
 class Agent
 {
 public:

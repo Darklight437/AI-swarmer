@@ -45,7 +45,7 @@
     <ClCompile Include="source\Agent.cpp">
       <Filter>Source Files\Gameobjects &amp; variants</Filter>
     </ClCompile>
-    <ClCompile Include="Behavior.cpp">
+    <ClCompile Include="source\Behavior.cpp">
       <Filter>Source Files\Gameobjects &amp; variants</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,7 +71,7 @@
     <ClInclude Include="source\Agent.h">
       <Filter>Source Files\Gameobjects &amp; variants</Filter>
     </ClInclude>
-    <ClInclude Include="Behavior.h">
+    <ClInclude Include="source\Behavior.h">
       <Filter>Source Files\Gameobjects &amp; variants</Filter>
     </ClInclude>
   </ItemGroup>
