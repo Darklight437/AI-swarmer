@@ -37,7 +37,7 @@ private:
 
 
     //square root of the radius to check for nodes
-    float sqrtSearchRad;
+    float squaredRadius;
     void radiusForCheck(std::list <Pathing_node*> nodesToSearch);
     //all nodes this node is connected to
     EdgeList connections;
