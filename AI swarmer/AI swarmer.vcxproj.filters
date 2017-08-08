@@ -51,6 +51,12 @@
     <ClCompile Include="source\Behavior.cpp">
       <Filter>Source Files\Gameobjects &amp; variants\Behaviors</Filter>
     </ClCompile>
+    <ClCompile Include="Seek.cpp">
+      <Filter>Source Files\Gameobjects &amp; variants\Behaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="Flee.cpp">
+      <Filter>Source Files\Gameobjects &amp; variants\Behaviors</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Gameobject.h">
@@ -75,6 +81,12 @@
       <Filter>Source Files\Gameobjects &amp; variants</Filter>
     </ClInclude>
     <ClInclude Include="source\Behavior.h">
+      <Filter>Source Files\Gameobjects &amp; variants\Behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="Seek.h">
+      <Filter>Source Files\Gameobjects &amp; variants\Behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="Flee.h">
       <Filter>Source Files\Gameobjects &amp; variants\Behaviors</Filter>
     </ClInclude>
   </ItemGroup>
