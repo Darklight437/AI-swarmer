@@ -30,7 +30,7 @@ public:
 
     //square root of the radius to check for nodes
     float squaredRadius;
-    void radiusForCheck(std::list <Pathing_node*> nodesToSearch, Pathing_node* currentNode);
+    void linkNodes(std::list <Pathing_node*> nodesToSearch, Pathing_node* currentNode);
 
 
 };

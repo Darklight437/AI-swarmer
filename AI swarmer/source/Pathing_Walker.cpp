@@ -114,7 +114,7 @@ void Pathing_Walker::addEdges(Pathing_node*)
     
 }
 
-void Pathing_Walker::radiusForCheck(std::list<Pathing_node*> nodesToSearch, Pathing_node* currentNode)
+void Pathing_Walker::linkNodes(std::list<Pathing_node*> nodesToSearch, Pathing_node* currentNode)
 {
     
 
@@ -141,7 +141,7 @@ void Pathing_Walker::radiusForCheck(std::list<Pathing_node*> nodesToSearch, Path
 
         for (iter = LinkedNodes.begin(); iter != LinkedNodes.end(); iter++)
         {
-            for (edgeSearch = currentNode->connections.begin; edgeSearch != currentNode->connections.end; edgeSearch++)
+            for (edgeSearch = currentNode->connections.begin(); edgeSearch != currentNode->connections.end(); edgeSearch++)
             {
                 if ((*edgeSearch)->Node1 != currentNode && (*edgeSearch)->Node2 != currentNode);
                 {
@@ -149,7 +149,7 @@ void Pathing_Walker::radiusForCheck(std::list<Pathing_node*> nodesToSearch, Path
                     newEdge->Node1 = currentNode;
                     newEdge->Node2 = (*iter);
                     currentNode->connections.push_back(newEdge);
-
+                    allEdges.push_back(newEdge);
                     //work out how to store these
                 }
 

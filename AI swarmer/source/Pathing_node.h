@@ -27,6 +27,8 @@ public:
 
 
     sf::Vector2f getPos();
+    void setPos(sf::Vector2f position);
+    void setPos(float x, float y);
 
     float Gscore;
     float Hscore;
