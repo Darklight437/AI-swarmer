@@ -28,6 +28,9 @@ public:
     //adds edges for a given node if there are other nodes present
     void addEdges(Pathing_node*);
 
+    //square root of the radius to check for nodes
+    float squaredRadius;
+    void radiusForCheck(std::list <Pathing_node*> nodesToSearch, Pathing_node* currentNode);
 
 
 };

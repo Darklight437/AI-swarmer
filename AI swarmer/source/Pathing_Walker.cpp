@@ -114,4 +114,48 @@ void Pathing_Walker::addEdges(Pathing_node*)
     
 }
 
+void Pathing_Walker::radiusForCheck(std::list<Pathing_node*> nodesToSearch, Pathing_node* currentNode)
+{
+    
+
+        std::list<Pathing_node*> LinkedNodes;
+        std::list<Pathing_node*>::iterator iter;
+        for (iter = nodesToSearch.begin(); iter != nodesToSearch.end(); iter++)
+        {
+            if ((*iter) != currentNode)
+            {
+
+                sf::Vector2f dispVect = currentNode->getPos() - (*iter)->getPos();
+
+                float squaredMagnitude = (dispVect.x * dispVect.x) + (dispVect.y * dispVect.y);
+                //valid range nodes
+                if (squaredMagnitude < squaredRadius)
+                {
+                    LinkedNodes.push_back(currentNode);
+                }
+
+
+            }
+        }// /for
+        EdgeList::iterator edgeSearch;
+
+        for (iter = LinkedNodes.begin(); iter != LinkedNodes.end(); iter++)
+        {
+            for (edgeSearch = currentNode->connections.begin; edgeSearch != currentNode->connections.end; edgeSearch++)
+            {
+                if ((*edgeSearch)->Node1 != currentNode && (*edgeSearch)->Node2 != currentNode);
+                {
+                    Pathing_edge* newEdge = new Pathing_edge;
+                    newEdge->Node1 = currentNode;
+                    newEdge->Node2 = (*iter);
+                    currentNode->connections.push_back(newEdge);
+
+                    //work out how to store these
+                }
+
+            }
+
+        } // /for 
+}
+
 

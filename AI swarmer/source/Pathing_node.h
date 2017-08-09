@@ -25,22 +25,21 @@ public:
     //links to all nearby valid nodes
     void linkToNodes();
 
-    sf::CircleShape circle;
-    sf::Vector2f m_position;
+
+    sf::Vector2f getPos();
 
     float Gscore;
     float Hscore;
     float Fscore;
     bool isWalkable;
+    EdgeList connections;
 
 private: 
-
-
-    //square root of the radius to check for nodes
-    float squaredRadius;
-    void radiusForCheck(std::list <Pathing_node*> nodesToSearch);
+    sf::Vector2f m_position;
+    sf::CircleShape circle;
+   
     //all nodes this node is connected to
-    EdgeList connections;
+    
 
 };
 
