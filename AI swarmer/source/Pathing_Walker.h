@@ -12,7 +12,7 @@ public:
     Pathing_Walker();
     ~Pathing_Walker();
     std::list<Pathing_node*> allNodes;
-
+    std::list<Pathing_edge*> allEdges;
     //built from wikipedia's psuedocode mostly
     void Astar(NodeList, Pathing_node* startNode, Pathing_node* targetNode);
 

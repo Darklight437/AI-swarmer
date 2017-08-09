@@ -44,16 +44,29 @@ void Pathing_node::radiusForCheck(std::list <Pathing_node*> nodesToSearch)
 
         }
     }// /for
-
+    EdgeList::iterator edgeSearch;
 
     for (iter = LinkedNodes.begin(); iter != LinkedNodes.end(); iter++)
     {
+        for (edgeSearch = connections.begin; edgeSearch != connections.end; edgeSearch++)
+        {
+            if ((*edgeSearch)->Node1 != this && (*edgeSearch)->Node2 != this);
+            {
+                Pathing_edge* newEdge = new Pathing_edge;
+                newEdge->Node1 = this;
+                newEdge->Node2 = (*iter);
+                connections.push_back(newEdge);
+                
+                //work out how to store these
+            }
 
-    }
+        }
+        
+    } // /for 
 
-    //once all nodes have been checked go through the vector,
-    //create an edge between the node if there isnt one already
-    //delete nodes from vector and fill new vector with edges
+    
+    
+    
 
     
 
