@@ -30,17 +30,21 @@ public:
     void setPos(sf::Vector2f position);
     void setPos(float x, float y);
 
+
+    //pathfinding scores 
     float Gscore;
     float Hscore;
     float Fscore;
     bool isWalkable;
+    //all the edges this node has
     EdgeList connections;
 
 private: 
+
     sf::Vector2f m_position;
     sf::CircleShape circle;
    
-    //all nodes this node is connected to
+
     
 
 };

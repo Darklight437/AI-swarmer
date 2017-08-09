@@ -23,14 +23,13 @@ public:
     Pathing_node* bestScore(NodeList openList);
 
     //generates a default node block
-    std::list<Pathing_node*> generateNodes();
+    void generateNodes();
 
-    //adds edges for a given node if there are other nodes present
-    void addEdges(Pathing_node*);
+   
 
     //square root of the radius to check for nodes
     float squaredRadius;
-    void linkNodes(std::list <Pathing_node*> nodesToSearch, Pathing_node* currentNode);
+    void linkNode(std::list <Pathing_node*> nodesToSearch, Pathing_node* currentNode);
 
 
 };

@@ -87,34 +87,31 @@ Pathing_node * Pathing_Walker::bestScore(NodeList openList)
     return lowest;
 }
 
-std::list<Pathing_node*> Pathing_Walker::generateNodes()
+void Pathing_Walker::generateNodes()
 {
-    NodeList nodes;
+   
     for (int i = 0; i < 100; i++)
     {
         //make a node
-        Pathing_node* fooptr = new Pathing_node;
-        nodes.push_back(fooptr);
+        Pathing_node* newNode = new Pathing_node;
+        allNodes.push_back(newNode);
+    }
 
-
-
-        //figure out how to find if there are other nodes nearby
-        //get an add edges function
-        
+    // go through each node and find its "neighbours" and create an edge between them, this should also
+    NodeList::iterator it;
+    for (it = allNodes.begin(); it != allNodes.end(); it++)
+    {
+        linkNode(allNodes, (*it));
     }
 
 
     //return a list of 100 nodes connected to each other including diagonals
-    return nodes;
-}
-
-void Pathing_Walker::addEdges(Pathing_node*)
-{
-
     
 }
 
-void Pathing_Walker::linkNodes(std::list<Pathing_node*> nodesToSearch, Pathing_node* currentNode)
+
+
+void Pathing_Walker::linkNode(std::list<Pathing_node*> nodesToSearch, Pathing_node* currentNode)
 {
     
 
