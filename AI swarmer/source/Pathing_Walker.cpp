@@ -1,5 +1,5 @@
 #include "Pathing_Walker.h"
-
+#include "SFML\Window\Mouse.hpp"
 
 
 Pathing_Walker::Pathing_Walker()
@@ -61,6 +61,8 @@ void Pathing_Walker::buildPath(Pathing_node * start, Pathing_node * end)
     //follow the pointers back through the nodes to find the strat from the end and then return this in some form
     return;//no clue
 }
+
+
 //return the lowest Fscore 
 Pathing_node * Pathing_Walker::bestScore(NodeList openList)
 {
@@ -89,7 +91,7 @@ Pathing_node * Pathing_Walker::bestScore(NodeList openList)
 
 void Pathing_Walker::generateNodes()
 {
-   
+    int nodepos;
     for (int i = 0; i < 100; i++)
     {
         //make a node
@@ -106,6 +108,17 @@ void Pathing_Walker::generateNodes()
 
 
     //return a list of 100 nodes connected to each other including diagonals
+    
+}
+
+void Pathing_Walker::movenodes()
+{
+    std::list<Pathing_node*>::iterator iter;
+    
+        for (iter = allNodes.begin(); iter != allNodes.end(); iter++)
+        {
+
+        }
     
 }
 
@@ -147,7 +160,7 @@ void Pathing_Walker::linkNode(std::list<Pathing_node*> nodesToSearch, Pathing_no
                     newEdge->Node2 = (*iter);
                     currentNode->connections.push_back(newEdge);
                     allEdges.push_back(newEdge);
-                    //work out how to store these
+                   
                 }
 
             }

@@ -108,28 +108,28 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Flee.cpp" />
-    <ClCompile Include="Seek.cpp" />
     <ClCompile Include="source\Agent.cpp" />
     <ClCompile Include="source\Behavior.cpp" />
+    <ClCompile Include="source\Flee.cpp" />
     <ClCompile Include="source\Gameobject.cpp" />
     <ClCompile Include="source\master.cpp" />
     <ClCompile Include="source\Pathing_edge.cpp" />
     <ClCompile Include="source\Pathing_node.cpp" />
     <ClCompile Include="source\Pathing_Walker.cpp" />
+    <ClCompile Include="source\Seek.cpp" />
     <ClCompile Include="source\Swarmer.cpp" />
     <ClCompile Include="source\WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Flee.h" />
-    <ClInclude Include="Seek.h" />
     <ClInclude Include="source\Agent.h" />
     <ClInclude Include="source\Behavior.h" />
+    <ClInclude Include="source\Flee.h" />
     <ClInclude Include="source\Gameobject.h" />
     <ClInclude Include="source\master.h" />
     <ClInclude Include="source\Pathing_edge.h" />
     <ClInclude Include="source\Pathing_node.h" />
     <ClInclude Include="source\Pathing_Walker.h" />
+    <ClInclude Include="source\Seek.h" />
     <ClInclude Include="source\Swarmer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
