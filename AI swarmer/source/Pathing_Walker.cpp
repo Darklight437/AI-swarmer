@@ -56,6 +56,7 @@ void Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Pathing_n
     }
 }
 
+
 void Pathing_Walker::buildPath(Pathing_node * start, Pathing_node * end)
 {
     //follow the pointers back through the nodes to find the strat from the end and then return this in some form
@@ -119,6 +120,12 @@ void Pathing_Walker::generateNodes()
     
 }
 
+void Pathing_Walker::generateSingleNode()
+{
+    //click and create one node at mouse position
+
+}
+
 void Pathing_Walker::movenodes()
 {
     std::list<Pathing_node*>::iterator iter;
@@ -138,7 +145,7 @@ void Pathing_Walker::draw()
 {
     for each (Pathing_node* node in allNodes)
     {
-        
+        //
     }
 }
 

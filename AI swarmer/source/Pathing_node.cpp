@@ -16,11 +16,6 @@ void Pathing_node::draw()
     
 }
 
-void Pathing_node::linkToNodes()
-{
-    //
-
-}
 
 sf::Vector2f Pathing_node::getPos()
 {
