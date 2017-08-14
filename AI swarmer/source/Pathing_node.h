@@ -2,7 +2,7 @@
 #include <list>
 #include <SFML\Graphics.hpp>
 #include "Pathing_edge.h"
-
+#include <SFML\Graphics\Drawable.hpp>
 
 
 class Pathing_node;
@@ -21,9 +21,9 @@ public:
 
     
     //render me function
-    void draw();
+    
     //links to all nearby valid nodes
-    void linkToNodes();
+    
 
 
     sf::Vector2f getPos();

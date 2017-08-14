@@ -141,11 +141,12 @@ void Pathing_Walker::movenodes()
     
 }
 
-void Pathing_Walker::draw()
+void Pathing_Walker::draw(sf::RenderWindow window)
 {
     for each (Pathing_node* node in allNodes)
     {
-        //
+        window.draw((*node))
+        //draw this somehow
     }
 }
 
