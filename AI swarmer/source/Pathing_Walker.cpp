@@ -91,13 +91,21 @@ Pathing_node * Pathing_Walker::bestScore(NodeList openList)
 
 void Pathing_Walker::generateNodes()
 {
-    int nodepos;
-    for (int i = 0; i < 100; i++)
+    int nodePosX = 0;
+    int nodePosY = 0;
+    for (int i = 0; i < 10; i++)
     {
-        //make a node
-        Pathing_node* newNode = new Pathing_node;
-        allNodes.push_back(newNode);
-    }
+        for (int i = 0; i < 10; i++)
+        {
+            //make a node
+            Pathing_node* newNode = new Pathing_node;
+            newNode->setPos(nodePosX, nodePosY);
+            allNodes.push_back(newNode);
+            nodePosY + 10;
+
+        }//end for
+        nodePosX + 10;
+    }//out of all loops
 
     // go through each node and find its "neighbours" and create an edge between them, this should also
     NodeList::iterator it;
@@ -114,12 +122,24 @@ void Pathing_Walker::generateNodes()
 void Pathing_Walker::movenodes()
 {
     std::list<Pathing_node*>::iterator iter;
-    
+    float searchRadiusSquared = 10000;
         for (iter = allNodes.begin(); iter != allNodes.end(); iter++)
         {
-
+            float VectToTarget = (((*iter)->getPos().x - sf::Mouse::getPosition().x) + ((*iter)->getPos().y - sf::Mouse::getPosition().y));
+            if ( VectToTarget < searchRadiusSquared)
+            {
+                //child the node to the mouse for movement
+            }
         }
     
+}
+
+void Pathing_Walker::draw()
+{
+    for each (Pathing_node* node in allNodes)
+    {
+        
+    }
 }
 
 

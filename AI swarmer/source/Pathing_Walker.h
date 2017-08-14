@@ -29,6 +29,8 @@ public:
 
     void movenodes();
 
+    void draw();
+
     //square root of the radius to check for nodes
     float squaredRadius;
     //searches all the nodes currently in the list adding the ones that fall within the squared radius
