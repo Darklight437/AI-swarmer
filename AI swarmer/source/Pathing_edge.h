@@ -14,7 +14,7 @@ public:
     Pathing_node* Node1;
     Pathing_node* Node2;
     float m_cost;
-
+    sf::RectangleShape* getEdge();
 
 private:
     sf::RectangleShape m_line;

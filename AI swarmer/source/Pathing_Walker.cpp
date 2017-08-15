@@ -158,6 +158,10 @@ void Pathing_Walker::drawNodes(sf::RenderWindow* render)
     for (iter = allNodes.begin(); iter != allNodes.end(); iter++)
     {
         render->draw((*iter)->circle);
+        for each (Pathing_edge:: var in collection_to_loop)
+        {
+
+        }
     }
 }
 
