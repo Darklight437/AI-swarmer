@@ -193,21 +193,39 @@ void Pathing_Walker::linkNode(std::list<Pathing_node*> nodesToSearch, Pathing_no
 
         for (auto &node : LinkedNodes)
         {
+
+
+            //if (currentNode->connections.empty())
+            //{
+            //    Pathing_edge* newEdge = new Pathing_edge;
+            //    newEdge->Node1 = currentNode;
+            //    newEdge->Node2 = (node);
+            //    currentNode->connections.push_back(newEdge);
+            //    allEdges.push_back(newEdge);
+            //}
+
+
             for (auto & edge : currentNode->connections)
             {
-                if ((edge->Node1 != currentNode) && (edge->Node2 != currentNode))
+
+                if ((edge->Node1 == currentNode) || (edge->Node2 == currentNode))
                 {
-                    Pathing_edge* newEdge = new Pathing_edge;
-                    newEdge->Node1 = currentNode;
-                    newEdge->Node2 = (node);
-                    currentNode->connections.push_back(newEdge);
-                    allEdges.push_back(newEdge);
-                   
+                    break;
                 }
 
-            }
+            }// /for edges
 
-        } // /for 
+
+            Pathing_edge* newEdge = new Pathing_edge;
+            newEdge->Node1 = currentNode;
+            newEdge->Node2 = (node);
+            currentNode->connections.push_back(newEdge);
+            allEdges.push_back(newEdge);
+
+
+
+
+        } // /for nodes
 }
 
 
