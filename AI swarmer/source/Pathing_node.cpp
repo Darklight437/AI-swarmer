@@ -11,6 +11,8 @@ Pathing_node::Pathing_node()
     circle.setFillColor(sf::Color(0, 0, 0));
     circle.setOutlineColor(sf::Color(255, 255, 255));
     m_previous = nullptr;
+    
+
 }
 
 
@@ -35,6 +37,7 @@ void Pathing_node::setPos(float x, float y)
     m_position.x = x;
     m_position.y = y;
     circle.setPosition(m_position);
+    circle.setOrigin(sf::Vector2f(circle.getGlobalBounds().width / 2, circle.getGlobalBounds().height / 2));
 }
 
 

@@ -158,10 +158,16 @@ void Pathing_Walker::drawNodes(sf::RenderWindow* render)
     for (auto &node : allNodes) 
     {
         render->draw(node->circle);
-        for (auto &edge : node->connections)
-        {
-            render->draw(*(edge->getEdge()));
-        }
+
+
+        
+        fooEdge->Node1 = allNodes.front();
+        fooEdge->Node2 = allNodes.back();
+        render->draw(*(fooEdge->getEdge()));
+        // for (auto &edge : allEdges)
+        //{
+        //    render->draw(*(edge->getEdge()));
+        //}
     }
 }
 
@@ -191,41 +197,46 @@ void Pathing_Walker::linkNode(std::list<Pathing_node*> nodesToSearch, Pathing_no
         }// /for
         
 
-        for (auto &node : LinkedNodes)
-        {
-
-
-            //if (currentNode->connections.empty())
-            //{
-            //    Pathing_edge* newEdge = new Pathing_edge;
-            //    newEdge->Node1 = currentNode;
-            //    newEdge->Node2 = (node);
-            //    currentNode->connections.push_back(newEdge);
-            //    allEdges.push_back(newEdge);
-            //}
-
-
-            for (auto & edge : currentNode->connections)
-            {
-
-                if ((edge->Node1 == currentNode) || (edge->Node2 == currentNode))
-                {
-                    break;
-                }
-
-            }// /for edges
-
-
-            Pathing_edge* newEdge = new Pathing_edge;
-            newEdge->Node1 = currentNode;
-            newEdge->Node2 = (node);
-            currentNode->connections.push_back(newEdge);
-            allEdges.push_back(newEdge);
+        
 
 
 
 
-        } // /for nodes
+        //for (auto &node : LinkedNodes)
+        //{
+
+
+        //    //if (currentNode->connections.empty())
+        //    //{
+        //    //    Pathing_edge* newEdge = new Pathing_edge;
+        //    //    newEdge->Node1 = currentNode;
+        //    //    newEdge->Node2 = (node);
+        //    //    currentNode->connections.push_back(newEdge);
+        //    //    allEdges.push_back(newEdge);
+        //    //}
+
+
+        //    for (auto & edge : currentNode->connections)
+        //    {
+
+        //        if ((edge->Node1 == currentNode) || (edge->Node2 == currentNode))
+        //        {
+        //            break;
+        //        }
+
+        //    }// /for edges
+
+
+        //    Pathing_edge* newEdge = new Pathing_edge;
+        //    newEdge->Node1 = currentNode;
+        //    newEdge->Node2 = (node);
+        //    currentNode->connections.push_back(newEdge);
+        //    allEdges.push_back(newEdge);
+
+
+
+
+       // } // /for nodes
 }
 
 

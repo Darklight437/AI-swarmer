@@ -30,10 +30,12 @@ void Pathing_edge::calculateRect()
     float dist = magnitude(Node1->getPos() - Node2->getPos());
     float angle = angleOfVect(Node1->getPos() - Node2->getPos());
 
-    m_line.setPosition(centerpoint);
+
     m_line.setSize(sf::Vector2f(dist, 2));
     m_line.setRotation(angle);
-    m_line.setOrigin(m_line.getGlobalBounds().width / 2, m_line.getGlobalBounds().height / 2);
+    m_line.setOrigin(m_line.getLocalBounds().width / 2, m_line.getLocalBounds().height / 2);
+    m_line.setPosition(centerpoint);
+
 
 
 }
