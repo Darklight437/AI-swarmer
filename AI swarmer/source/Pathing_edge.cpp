@@ -20,6 +20,7 @@ float Pathing_edge::getCost()
 
 sf::RectangleShape * Pathing_edge::getEdge()
 {
+    calculateRect();
     return &m_line;
 }
 

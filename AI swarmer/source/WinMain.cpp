@@ -33,7 +33,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
         //tell objects to draw here
         
         m_NodeManager->drawNodes(windowPtr);
-
+        
 
 
 

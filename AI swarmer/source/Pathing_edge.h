@@ -14,6 +14,7 @@ public:
     Pathing_node* Node1;
     Pathing_node* Node2;
     float m_cost;
+    //returns the sf::shape as a pointer that represents the edge
     sf::RectangleShape* getEdge();
 
 private:

@@ -109,10 +109,10 @@ void Pathing_Walker::generateNodes()
     }//out of all loops
 
     // go through each node and find its "neighbours" and create an edge between them, this should also
-    NodeList::iterator it;
-    for (it = allNodes.begin(); it != allNodes.end(); it++)
+    
+    for (auto &node : allNodes)
     {
-        linkNode(allNodes, (*it));
+        linkNode(allNodes, (node));
     }
 
 
@@ -154,13 +154,13 @@ void Pathing_Walker::drawNodes(sf::RenderWindow* render)
 
     //render->draw(circle);
 
-    std::list<Pathing_node*>::iterator iter;
-    for (iter = allNodes.begin(); iter != allNodes.end(); iter++)
+    
+    for (auto &node : allNodes) 
     {
-        render->draw((*iter)->circle);
-        for each (Pathing_edge:: var in collection_to_loop)
+        render->draw(node->circle);
+        for (auto &edge : node->connections)
         {
-
+            render->draw(*(edge->getEdge()));
         }
     }
 }
@@ -171,13 +171,13 @@ void Pathing_Walker::linkNode(std::list<Pathing_node*> nodesToSearch, Pathing_no
     
 
         std::list<Pathing_node*> LinkedNodes;
-        std::list<Pathing_node*>::iterator iter;
-        for (iter = nodesToSearch.begin(); iter != nodesToSearch.end(); iter++)
+       
+        for (auto &node : allNodes)
         {
-            if ((*iter) != currentNode)
+            if ((node) != currentNode)
             {
 
-                sf::Vector2f dispVect = currentNode->getPos() - (*iter)->getPos();
+                sf::Vector2f dispVect = currentNode->getPos() - (node)->getPos();
 
                 float squaredMagnitude = (dispVect.x * dispVect.x) + (dispVect.y * dispVect.y);
                 //valid range nodes
@@ -189,17 +189,17 @@ void Pathing_Walker::linkNode(std::list<Pathing_node*> nodesToSearch, Pathing_no
 
             }
         }// /for
-        EdgeList::iterator edgeSearch;
+        
 
-        for (iter = LinkedNodes.begin(); iter != LinkedNodes.end(); iter++)
+        for (auto &node : LinkedNodes)
         {
-            for (edgeSearch = currentNode->connections.begin(); edgeSearch != currentNode->connections.end(); edgeSearch++)
+            for (auto & edge : currentNode->connections)
             {
-                if (((*edgeSearch)->Node1 != currentNode) && ((*edgeSearch)->Node2 != currentNode))
+                if ((edge->Node1 != currentNode) && (edge->Node2 != currentNode))
                 {
                     Pathing_edge* newEdge = new Pathing_edge;
                     newEdge->Node1 = currentNode;
-                    newEdge->Node2 = (*iter);
+                    newEdge->Node2 = (node);
                     currentNode->connections.push_back(newEdge);
                     allEdges.push_back(newEdge);
                    
