@@ -17,14 +17,14 @@ public:
 
     //the node that this node can be most efficiently reached from
     Pathing_node* m_previous;
-
+    
 
     
     //render me function
     
     //links to all nearby valid nodes
     
-
+    sf::CircleShape circle;
 
     sf::Vector2f getPos();
     void setPos(sf::Vector2f position);
@@ -32,17 +32,17 @@ public:
 
 
     //pathfinding scores 
-    float Gscore;
-    float Hscore;
-    float Fscore;
-    bool isWalkable;
+    float Gscore = 0;
+    float Hscore = 0;
+    float Fscore = 0;
+    bool isWalkable = true;
     //all the edges this node has
     EdgeList connections;
 
 private: 
 
     sf::Vector2f m_position;
-    sf::CircleShape circle;
+
    
 
     

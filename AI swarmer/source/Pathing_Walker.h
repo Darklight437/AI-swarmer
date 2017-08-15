@@ -29,7 +29,7 @@ public:
 
     void movenodes();
 
-    void draw(sf::RenderWindow window);
+    void drawNodes(sf::RenderWindow* render);
 
     //square root of the radius to check for nodes
     float squaredRadius;

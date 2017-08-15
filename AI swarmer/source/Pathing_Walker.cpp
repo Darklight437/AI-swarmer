@@ -94,18 +94,18 @@ void Pathing_Walker::generateNodes()
 {
     int nodePosX = 0;
     int nodePosY = 0;
-    for (int i = 0; i < 10; i++)
+    for (nodePosX = 0; nodePosX < 1000; nodePosX += 100 )
     {
-        for (int i = 0; i < 10; i++)
+        for (nodePosY = 0; nodePosY < 1000; nodePosY += 100 )
         {
             //make a node
             Pathing_node* newNode = new Pathing_node;
             newNode->setPos(nodePosX, nodePosY);
             allNodes.push_back(newNode);
-            nodePosY + 10;
+            
 
         }//end for
-        nodePosX + 10;
+        
     }//out of all loops
 
     // go through each node and find its "neighbours" and create an edge between them, this should also
@@ -120,11 +120,15 @@ void Pathing_Walker::generateNodes()
     
 }
 
+
+
 void Pathing_Walker::generateSingleNode()
 {
     //click and create one node at mouse position
 
 }
+
+
 
 void Pathing_Walker::movenodes()
 {
@@ -141,15 +145,21 @@ void Pathing_Walker::movenodes()
     
 }
 
-void Pathing_Walker::draw(sf::RenderWindow window)
+
+
+void Pathing_Walker::drawNodes(sf::RenderWindow* render)
 {
-    for each (Pathing_node* node in allNodes)
+
+    //sf::CircleShape circle(20);
+
+    //render->draw(circle);
+
+    std::list<Pathing_node*>::iterator iter;
+    for (iter = allNodes.begin(); iter != allNodes.end(); iter++)
     {
-        window.draw((*node))
-        //draw this somehow
+        render->draw((*iter)->circle);
     }
 }
-
 
 
 void Pathing_Walker::linkNode(std::list<Pathing_node*> nodesToSearch, Pathing_node* currentNode)
@@ -181,7 +191,7 @@ void Pathing_Walker::linkNode(std::list<Pathing_node*> nodesToSearch, Pathing_no
         {
             for (edgeSearch = currentNode->connections.begin(); edgeSearch != currentNode->connections.end(); edgeSearch++)
             {
-                if ((*edgeSearch)->Node1 != currentNode && (*edgeSearch)->Node2 != currentNode);
+                if (((*edgeSearch)->Node1 != currentNode) && ((*edgeSearch)->Node2 != currentNode))
                 {
                     Pathing_edge* newEdge = new Pathing_edge;
                     newEdge->Node1 = currentNode;
