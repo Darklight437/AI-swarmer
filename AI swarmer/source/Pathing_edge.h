@@ -1,4 +1,5 @@
 #pragma once
+#include <SFML\Graphics.hpp>
 //forward dec
 class Pathing_node;
 
@@ -14,10 +15,10 @@ public:
     Pathing_node* Node2;
     float m_cost;
 
-private:
 
-   
-        
+private:
+    sf::RectangleShape m_line;
+    void calculateRect();
 
 
 };

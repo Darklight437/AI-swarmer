@@ -57,6 +57,9 @@
     <ClCompile Include="source\Flee.cpp">
       <Filter>Source Files\Gameobjects &amp; variants\Behaviors</Filter>
     </ClCompile>
+    <ClCompile Include="source\Vmath.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Gameobject.h">
@@ -88,6 +91,9 @@
     </ClInclude>
     <ClInclude Include="source\Flee.h">
       <Filter>Source Files\Gameobjects &amp; variants\Behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Vmath.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

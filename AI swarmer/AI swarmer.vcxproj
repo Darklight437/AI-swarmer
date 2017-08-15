@@ -118,6 +118,7 @@
     <ClCompile Include="source\Pathing_Walker.cpp" />
     <ClCompile Include="source\Seek.cpp" />
     <ClCompile Include="source\Swarmer.cpp" />
+    <ClCompile Include="source\Vmath.cpp" />
     <ClCompile Include="source\WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +132,7 @@
     <ClInclude Include="source\Pathing_Walker.h" />
     <ClInclude Include="source\Seek.h" />
     <ClInclude Include="source\Swarmer.h" />
+    <ClInclude Include="source\Vmath.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
