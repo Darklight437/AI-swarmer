@@ -167,7 +167,7 @@ void Pathing_Walker::drawNodes(sf::RenderWindow* render)
     }
 }
 
-
+//TODO step through here and figure out whats not working
 void Pathing_Walker::linkNode( Pathing_node* currentNode)
 {
     //gets called in a loop so it shoufl only link up one node to its neighbors
