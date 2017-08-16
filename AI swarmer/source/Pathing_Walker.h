@@ -37,7 +37,7 @@ public:
     void linkNode(std::list <Pathing_node*> nodesToSearch, Pathing_node* currentNode);
 
 
-    Pathing_edge* fooEdge = new Pathing_edge;
+    
 
 };
 

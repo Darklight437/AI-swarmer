@@ -159,15 +159,11 @@ void Pathing_Walker::drawNodes(sf::RenderWindow* render)
     {
         render->draw(node->circle);
 
-
         
-        fooEdge->Node1 = allNodes.front();
-        fooEdge->Node2 = allNodes.back();
-        render->draw(*(fooEdge->getEdge()));
-        // for (auto &edge : allEdges)
-        //{
-        //    render->draw(*(edge->getEdge()));
-        //}
+         for (auto &edge : allEdges)
+        {
+            render->draw(*(edge->getEdge()));
+        }
     }
 }
 
@@ -176,7 +172,7 @@ void Pathing_Walker::linkNode(std::list<Pathing_node*> nodesToSearch, Pathing_no
 {
     
 
-        std::list<Pathing_node*> LinkedNodes;
+        std::list<Pathing_node*> nearbyNodes;
        
         for (auto &node : allNodes)
         {
@@ -189,7 +185,7 @@ void Pathing_Walker::linkNode(std::list<Pathing_node*> nodesToSearch, Pathing_no
                 //valid range nodes
                 if (squaredMagnitude < squaredRadius)
                 {
-                    LinkedNodes.push_back(currentNode);
+                    nearbyNodes.push_back(currentNode);
                 }
 
 
@@ -197,46 +193,59 @@ void Pathing_Walker::linkNode(std::list<Pathing_node*> nodesToSearch, Pathing_no
         }// /for
         
 
-        
+        for (auto &node : nearbyNodes)
+        {
+
+
+            if (currentNode->connections.empty() && node->connections.empty())
+            {
+                Pathing_edge* newEdge = new Pathing_edge;
+                newEdge->Node1 = currentNode;
+                newEdge->Node2 = (node);
+                currentNode->connections.push_back(newEdge);
+                node->connections.push_back(newEdge);
+                allEdges.push_back(newEdge);
+            }
+
+
+            //if an edge already exists in connections between the current node and the iterated node exit out
+            for (auto &edge : node->connections)
+            {
+                //if the current edge selected in the iterated node has a pointer to the node we are linking to exit out of the loop
+                //as this node is already connected
+                //(make sure that the original node knows this)
+                if ((edge->Node1 == currentNode) || (edge->Node2 == currentNode))
+                {
+
+                    for (auto &edges : currentNode->connections)
+                    {
+                        if (edges = edge)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            currentNode->connections.push_back(edge);
+                        }
+                    } // edges loop
+
+                }
+                
+                Pathing_edge* newEdge = new Pathing_edge;
+                newEdge->Node1 = currentNode;
+                newEdge->Node2 = node;
+                currentNode->connections.push_back(newEdge);
+                allEdges.push_back(newEdge);
+
+            }// /for edges
 
 
 
 
-        //for (auto &node : LinkedNodes)
-        //{
-
-
-        //    //if (currentNode->connections.empty())
-        //    //{
-        //    //    Pathing_edge* newEdge = new Pathing_edge;
-        //    //    newEdge->Node1 = currentNode;
-        //    //    newEdge->Node2 = (node);
-        //    //    currentNode->connections.push_back(newEdge);
-        //    //    allEdges.push_back(newEdge);
-        //    //}
-
-
-        //    for (auto & edge : currentNode->connections)
-        //    {
-
-        //        if ((edge->Node1 == currentNode) || (edge->Node2 == currentNode))
-        //        {
-        //            break;
-        //        }
-
-        //    }// /for edges
-
-
-        //    Pathing_edge* newEdge = new Pathing_edge;
-        //    newEdge->Node1 = currentNode;
-        //    newEdge->Node2 = (node);
-        //    currentNode->connections.push_back(newEdge);
-        //    allEdges.push_back(newEdge);
 
 
 
-
-       // } // /for nodes
+        } // /for nodes
 }
 
 
