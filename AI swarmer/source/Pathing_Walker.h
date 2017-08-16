@@ -34,7 +34,9 @@ public:
     //square root of the radius to check for nodes
     float squaredRadius = 14400;
     //searches all the nodes currently in the list adding the ones that fall within the squared radius
-    void linkNode(std::list <Pathing_node*> nodesToSearch, Pathing_node* currentNode);
+    void linkNode(Pathing_node* currentNode);
+
+    
 
 
     
