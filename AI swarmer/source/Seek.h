@@ -2,6 +2,7 @@
 #include "Behavior.h"
 #include<SFML\Graphics\Transformable.hpp>
 
+
 class Seek :
     public Behavior
 {
