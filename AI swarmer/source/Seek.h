@@ -1,14 +1,14 @@
 #pragma once
 #include "Behavior.h"
 #include<SFML\Graphics\Transformable.hpp>
-#include 
+
 class Seek :
     public Behavior
 {
 public:
     Seek();
     ~Seek();
-
+    Seek(sf::Vector2f myPosition);
 
 
 private:
