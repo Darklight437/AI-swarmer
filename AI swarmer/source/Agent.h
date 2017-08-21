@@ -10,11 +10,11 @@ public:
     Agent();
     ~Agent();
     
-   
+    sf::Vector2f getSteeringForce();
     
     
 
     std::vector<Behavior*> behaviors;
-    
+    sf::Vector2f steeringForce;
 };
 

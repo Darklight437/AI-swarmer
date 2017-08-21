@@ -9,7 +9,7 @@ public:
     Seek();
     ~Seek();
     Seek(sf::Vector2f myPosition);
-
+    sf::Vector2f calculateForce();
 
 private:
     sf::Vector2f myPos;
