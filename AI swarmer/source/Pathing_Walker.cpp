@@ -109,9 +109,10 @@ void Pathing_Walker::generateNodes()
     }//out of all loops
 
     // go through each node and find its "neighbours" and create an edge between them, this should also
-    
+    //for every node in all node list
     for (auto &node : allNodes)
     {
+        
         linkNode(node);
     }
 
@@ -167,6 +168,8 @@ void Pathing_Walker::drawNodes(sf::RenderWindow* render)
     }
 }
 
+
+
 //TODO step through here and figure out whats not working
 void Pathing_Walker::linkNode( Pathing_node* currentNode)
 {
@@ -185,14 +188,15 @@ void Pathing_Walker::linkNode( Pathing_node* currentNode)
 
                 float squaredDistanceFromMe = (dispVect.x * dispVect.x) + (dispVect.y * dispVect.y);
                 //valid range nodes
-                if (squaredDistanceFromMe < squaredRadius)
+                if (squaredDistanceFromMe <= squaredRadius)
                 {
-                    nearbyNodes.push_back(currentNode);
+                    nearbyNodes.push_back(node);
                 }
 
 
             }
         }// /for
+        //confirmed working, is collating nodes in the nearbynodes list
         
 
         for (auto &nearbyNode : nearbyNodes)
@@ -226,7 +230,6 @@ void Pathing_Walker::linkNode( Pathing_node* currentNode)
 
             if (connected == false)
             {
-
                 Pathing_edge* newEdge = new Pathing_edge;
                 newEdge->Node1 = currentNode;
                 newEdge->Node2 = nearbyNode;
