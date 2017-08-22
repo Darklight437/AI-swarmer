@@ -9,7 +9,7 @@ class Seek :
 public:
     Seek();
     ~Seek();
-    Seek(sf::Vector2f myPosition);
+    //Find(sf::Vector2f myPosition);
     sf::Vector2f calculateForce();
 
 private:

@@ -15,7 +15,8 @@ public:
     
     
 
-    std::vector<Behavior*> behaviors;
+    Behavior* seekBehavior = new Seek;
+    
     sf::Vector2f steeringForce;
 };
 

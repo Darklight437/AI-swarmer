@@ -11,10 +11,10 @@ Seek::~Seek()
 {
 }
 
-Seek::Seek(sf::Vector2f myPosition)
-{
-    myPos = myPosition;
-}
+//Seek::Find(sf::Vector2f myPosition)
+//{
+//    myPos = myPosition;
+//}
 
 sf::Vector2f Seek::calculateForce()
 {

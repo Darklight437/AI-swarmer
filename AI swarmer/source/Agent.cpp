@@ -4,27 +4,25 @@
 
 Agent::Agent()
 {
-    behaviors.push_back(Behavior* seek = new Seek)
+    
+    
 }
 
 
 Agent::~Agent()
 {
+
 }
 
 sf::Vector2f Agent::getSteeringForce()
 {
-    if (behaviors.empty() == false)
-    {
-        for (auto &behavior :behaviors)
-        {
-            steeringForce += behavior->Force;
-        }
-        return steeringForce;
-    }
+   
+    //get each behavior just seek for now
+    //add all their steeringforce values together to get this frame's force
+        
+    ((Seek*)seekBehavior)->calculateForce()
 
     
-    steeringForce.x = 0;
-    steeringForce.y = 0;
+    
     return steeringForce;
 }
