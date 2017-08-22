@@ -5,10 +5,13 @@ class master :
     public Gameobject
 {
 public:
-
+    
     void loadSprite();
 
     master();
     ~master();
+
+private:
+    Agent* myAgent;
 };
 

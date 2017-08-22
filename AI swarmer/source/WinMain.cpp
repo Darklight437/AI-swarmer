@@ -1,5 +1,6 @@
 
 #include "Gameobject.h"
+#include "master.h"
 #include "Pathing_Walker.h"
 #include <Windows.h>
 #include <SFML\Graphics.hpp>
@@ -16,10 +17,12 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
     // run startup constructor for the game(sorta)
     
 
-
-
+    //make gameobjects
+    Gameobject* miniship = new master();
+    
 
     m_NodeManager->generateNodes();
+
     mainClock.restart();
 
 
@@ -39,14 +42,18 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
         deltaTime = mainClock.restart();
 
 
-
+        
         m_NodeManager->drawNodes(windowPtr);
+        window.draw(miniship->m_sprite);
+
         
 
 
-
         window.display();
-    }
+    } //end loop
+
+    delete m_NodeManager;
+    delete miniship;
 
     return 0;
 }

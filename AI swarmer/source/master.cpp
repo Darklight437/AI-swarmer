@@ -1,6 +1,6 @@
 #include "master.h"
-
-
+#include"Behavior.h"
+#include "Seek.h"
 
 void master::loadSprite()
 {
@@ -11,9 +11,14 @@ void master::loadSprite()
 
 master::master()
 {
+   loadSprite();
+   myAgent = new Agent;
+
+   myAgent->behaviors.push_back();
 }
 
 
 master::~master()
 {
+    delete myAgent;
 }

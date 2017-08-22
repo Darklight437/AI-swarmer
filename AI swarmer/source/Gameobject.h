@@ -12,6 +12,10 @@ public:
     virtual ~Gameobject();
     //virtual void loadSprite() = 0;
   static std::string getExecutableFolder();
+  void setPosition(sf::Vector2f position);
+  void setPosition(float x, float y);
+  //occur every frame updating the transform if it has ben changed etc
+  void update();
 
   sf::Sprite m_sprite;
 protected:

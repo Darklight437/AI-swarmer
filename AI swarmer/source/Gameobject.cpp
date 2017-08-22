@@ -37,3 +37,21 @@ Gameobject::~Gameobject()
     return buffer;
 }
 
+ void Gameobject::setPosition(sf::Vector2f position)
+ {
+     m_position = position;
+ }
+
+ void Gameobject::setPosition(float x, float y)
+ {
+     m_position.x = x;
+     m_position.y = y;
+ }
+
+ void Gameobject::update()
+ {
+     m_sprite.setPosition(m_position);
+
+     
+ }
+
