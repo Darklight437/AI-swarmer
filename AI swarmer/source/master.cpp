@@ -11,10 +11,11 @@ void master::loadSprite()
 
 master::master()
 {
+    //idk brobably intellisense having an anuerism
    loadSprite();
    myAgent = new Agent;
 
-   myAgent->behaviors.push_back();
+   
 }
 
 

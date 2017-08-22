@@ -4,6 +4,7 @@
 
 Agent::Agent()
 {
+    behaviors.push_back(Behavior* seek = new Seek)
 }
 
 

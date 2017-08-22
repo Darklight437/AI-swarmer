@@ -2,6 +2,7 @@
 //#include <SFML\Graphics\Transformable.hpp>
 #include <vector>
 #include "Behavior.h"
+#include "Seek.h"
 
 
 class Agent
