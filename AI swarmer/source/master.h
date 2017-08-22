@@ -1,5 +1,6 @@
 #pragma once
 #include "Gameobject.h"
+#include "Agent.h"
 class master :
     public Gameobject
 {

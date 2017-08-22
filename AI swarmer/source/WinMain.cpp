@@ -31,7 +31,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
             if (event.type == sf::Event::Closed)
                 window.close();   
         }
-
+        
         
 
         window.clear();
