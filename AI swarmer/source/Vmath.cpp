@@ -16,7 +16,14 @@ float angleOfVect(sf::Vector2f vector)
     return angle < 0.0f ? angle + 360.0f : angle;
 }
 
-sf::Vector2f setMagnitude(float magnitudeToSet)
+sf::Vector2f normalise(sf::Vector2f vector)
 {
-
+    float mag = magnitude(vector);
+    sf::Vector2f newVect;
+    if (mag > 0)
+    {
+        newVect = vector / mag;
+        return newVect;
+    }
+    //error here somehow vector magnitude is already zero
 }
