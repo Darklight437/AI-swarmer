@@ -14,7 +14,7 @@ master::master()
     //idk brobably intellisense having an anuerism
    loadSprite();
    myAgent = new Agent;
-
+   
    
 }
 

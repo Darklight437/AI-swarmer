@@ -17,6 +17,7 @@ public:
 
     Behavior* seekBehavior = new Seek;
     
+    
     sf::Vector2f steeringForce;
 };
 

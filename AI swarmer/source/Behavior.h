@@ -6,8 +6,8 @@ public:
     Behavior();
     virtual ~Behavior();
 
-    sf::Vector2f Force;
-
+    sf::Vector2f m_Force;
+    sf::Vector2f m_target;
 protected:
     virtual sf::Vector2f calculateForce() = 0;
 

@@ -19,7 +19,7 @@ Seek::~Seek()
 sf::Vector2f Seek::calculateForce()
 {
     
-    steeringForce = myPos - m_targetPos;
+    steeringForce = myPos - m_target;
     
     steeringForce = normalise(steeringForce);
     steeringForce * seekspeed;
