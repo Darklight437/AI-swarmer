@@ -41,7 +41,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
         //tell objects to draw here
         deltaTime = mainClock.restart();
 
-
+        ((master*)miniship)->seekTarget(m_NodeManager->allNodes.back()->getPos());
         
         m_NodeManager->drawNodes(windowPtr);
         window.draw(miniship->m_sprite);
