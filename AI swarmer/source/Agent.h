@@ -11,7 +11,7 @@ public:
     Agent();
     ~Agent();
     
-    sf::Vector2f getSteeringForce();
+    sf::Vector2f getSteeringForce(sf::Vector2f myPosition, sf::Vector2f targetPosition);
     
     
 

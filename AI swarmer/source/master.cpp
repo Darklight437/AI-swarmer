@@ -11,7 +11,7 @@ void master::loadSprite()
 
 master::master()
 {
-    //idk brobably intellisense having an anuerism
+   
    loadSprite();
    myAgent = new Agent;
    
@@ -22,4 +22,9 @@ master::master()
 master::~master()
 {
     delete myAgent;
+}
+
+void master::seekTarget(sf::Vector2f target)
+{
+    myAgent->getSteeringForce(m_position, target);
 }
