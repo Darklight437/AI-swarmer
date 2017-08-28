@@ -4,7 +4,7 @@
 #include "Pathing_Walker.h"
 #include <Windows.h>
 #include <SFML\Graphics.hpp>
-#include <SFML\System\Clock.hpp>
+
 
 
 int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine, int cmdShow)
@@ -12,8 +12,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
     sf::RenderWindow window(sf::VideoMode(1680, 1060), "Swarmlings");
     sf::RenderWindow* windowPtr = &window;
     Pathing_Walker* m_NodeManager = new Pathing_Walker;
-    sf::Clock mainClock;
-    sf::Time deltaTime;
+
     // run startup constructor for the game(sorta)
     
 
@@ -23,7 +22,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
 
     m_NodeManager->generateNodes();
 
-    mainClock.restart();
+
 
 
     while (window.isOpen())
@@ -39,10 +38,10 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
 
         window.clear();
         //tell objects to draw here
-        deltaTime = mainClock.restart();
+        //deltaTime = mainClock.restart();
 
         ((master*)miniship)->seekTarget(m_NodeManager->allNodes.back()->getPos());
-        
+        miniship->update();
         m_NodeManager->drawNodes(windowPtr);
         window.draw(miniship->m_sprite);
 

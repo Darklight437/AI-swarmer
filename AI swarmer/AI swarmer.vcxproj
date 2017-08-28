@@ -108,6 +108,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="deltaClock.cpp" />
     <ClCompile Include="source\Agent.cpp" />
     <ClCompile Include="source\Behavior.cpp" />
     <ClCompile Include="source\Flee.cpp" />
@@ -122,6 +123,7 @@
     <ClCompile Include="source\WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="deltaClock.h" />
     <ClInclude Include="source\Agent.h" />
     <ClInclude Include="source\Behavior.h" />
     <ClInclude Include="source\Flee.h" />

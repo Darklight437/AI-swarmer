@@ -60,6 +60,9 @@
     <ClCompile Include="source\Seek.cpp">
       <Filter>Source Files\Gameobjects &amp; variants\Behaviors</Filter>
     </ClCompile>
+    <ClCompile Include="deltaClock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Gameobject.h">
@@ -94,6 +97,9 @@
     </ClInclude>
     <ClInclude Include="source\Seek.h">
       <Filter>Source Files\Gameobjects &amp; variants\Behaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="deltaClock.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -29,7 +29,7 @@ void master::seekTarget(sf::Vector2f target)
     sf::Vector2f steering;
     //returns a vector2f that is the total motion force on the object
   steering = myAgent->getSteeringForce(m_position, target);
-
+  //how to actually move towards this position pl0x
   m_position += steering;
 
 }
