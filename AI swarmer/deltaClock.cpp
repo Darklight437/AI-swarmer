@@ -11,6 +11,15 @@ deltaClock::~deltaClock()
 {
 }
 
+deltaClock * deltaClock::instance()
+{
+    if (!s_instance)
+    {
+        s_instance = new deltaClock;
+        return s_instance;
+    }
+}
+
 sf::Time deltaClock::restart()
 {
     sf::Time elapsedTime = timer.restart();
