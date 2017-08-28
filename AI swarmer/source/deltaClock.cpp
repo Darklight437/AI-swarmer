@@ -19,14 +19,14 @@ deltaClock * deltaClock::getInstance()
     return&clock;
 }
 
-sf::Time deltaClock::restart()
+double deltaClock::restart()
 {
     sf::Time elapsedTime = timer.restart();
-    return elapsedTime;
+    return elapsedTime.asMilliseconds();
 }
 
-sf::Time deltaClock::getelapsedTime()
+double deltaClock::getelapsedTime()
 {
     sf::Time elapsedTime = timer.getElapsedTime();
-    return elapsedTime;
+    return elapsedTime.asMilliseconds();
 } 

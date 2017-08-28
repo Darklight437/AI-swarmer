@@ -1,7 +1,7 @@
 #pragma once
 
 #include <SFML\System\Clock.hpp>
-#define CLOCK deltaclock::getInstance()
+#define CLOCK deltaClock::getInstance()
 
 
 class deltaClock
@@ -14,8 +14,8 @@ public:
 
 
     //returns the elapsed time since last update
-    sf::Time restart();
-    sf::Time getelapsedTime();
+    double restart();
+    double getelapsedTime();
 
 private:
     sf::Clock timer;

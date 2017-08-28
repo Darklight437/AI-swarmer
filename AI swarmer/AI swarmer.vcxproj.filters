@@ -60,7 +60,7 @@
     <ClCompile Include="source\Seek.cpp">
       <Filter>Source Files\Gameobjects &amp; variants\Behaviors</Filter>
     </ClCompile>
-    <ClCompile Include="deltaClock.cpp">
+    <ClCompile Include="source\deltaClock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -98,7 +98,7 @@
     <ClInclude Include="source\Seek.h">
       <Filter>Source Files\Gameobjects &amp; variants\Behaviors</Filter>
     </ClInclude>
-    <ClInclude Include="deltaClock.h">
+    <ClInclude Include="source\deltaClock.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

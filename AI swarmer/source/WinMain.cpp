@@ -4,7 +4,7 @@
 #include "Pathing_Walker.h"
 #include <Windows.h>
 #include <SFML\Graphics.hpp>
-
+#include "deltaClock.h"
 
 
 int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine, int cmdShow)
@@ -38,8 +38,8 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
 
         window.clear();
         //tell objects to draw here
-        //deltaTime = mainClock.restart();
-
+        
+        CLOCK->restart();
         ((master*)miniship)->seekTarget(m_NodeManager->allNodes.back()->getPos());
         miniship->update();
         m_NodeManager->drawNodes(windowPtr);

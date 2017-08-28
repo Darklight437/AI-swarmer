@@ -27,3 +27,11 @@ sf::Vector2f normalise(sf::Vector2f vector)
     }
     //error here somehow vector magnitude is already zero
 }
+
+//sf::Vector2f operator*=(double rhs)
+//{
+//    sf::Vector2f newVect;
+//    newVect.x * rhs;
+//    newVect.y * rhs;
+//    return sf::Vector2f();
+//}
