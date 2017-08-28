@@ -11,13 +11,12 @@ deltaClock::~deltaClock()
 {
 }
 
-deltaClock * deltaClock::instance()
+
+
+deltaClock * deltaClock::getInstance()
 {
-    if (!s_instance)
-    {
-        s_instance = new deltaClock;
-        return s_instance;
-    }
+    static deltaClock clock;
+    return&clock;
 }
 
 sf::Time deltaClock::restart()

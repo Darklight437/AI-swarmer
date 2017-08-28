@@ -1,14 +1,15 @@
 #pragma once
 
 #include <SFML\System\Clock.hpp>
+#define CLOCK deltaclock::getInstance()
+
 
 class deltaClock
 {
 public:
 
-    static deltaClock *s_instance;
 
-    static deltaClock *instance();
+    static deltaClock *getInstance();
 
 
 
