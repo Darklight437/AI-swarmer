@@ -21,12 +21,14 @@ deltaClock * deltaClock::getInstance()
 
 double deltaClock::restart()
 {
-    sf::Time elapsedTime = timer.restart();
-    return elapsedTime.asMilliseconds();
+    TimeForFrame = timer.restart();
+    return TimeForFrame.asMilliseconds();
 }
 
 double deltaClock::getelapsedTime()
 {
-    sf::Time elapsedTime = timer.getElapsedTime();
-    return elapsedTime.asMilliseconds();
+    // gets time since last restart
+    //is this ok?
+    TimeForFrame = timer.getElapsedTime();
+    return TimeForFrame.asMilliseconds();
 } 

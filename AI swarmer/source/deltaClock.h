@@ -7,6 +7,7 @@
 class deltaClock
 {
 public:
+    //use the sfml clock to just check when it is called
 
 
     static deltaClock *getInstance();
@@ -19,6 +20,7 @@ public:
 
 private:
     sf::Clock timer;
+    sf::Time TimeForFrame;
     deltaClock();
     ~deltaClock();
 

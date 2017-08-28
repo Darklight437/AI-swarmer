@@ -27,6 +27,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
 
     while (window.isOpen())
     {
+        CLOCK->restart();
         sf::Event event;
         while (window.pollEvent(event))
         {
@@ -39,7 +40,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
         window.clear();
         //tell objects to draw here
         
-        CLOCK->restart();
+        
         ((master*)miniship)->seekTarget(m_NodeManager->allNodes.back()->getPos());
         miniship->update();
         m_NodeManager->drawNodes(windowPtr);
