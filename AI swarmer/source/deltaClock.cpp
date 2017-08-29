@@ -22,7 +22,7 @@ deltaClock * deltaClock::getInstance()
 double deltaClock::restart()
 {
     TimeForFrame = timer.restart();
-    return TimeForFrame.asMilliseconds();
+    return TimeForFrame.asSeconds();
 }
 
 double deltaClock::getelapsedTime()
@@ -34,5 +34,5 @@ double deltaClock::getelapsedTime()
     {
         TimeForFrame = sf::milliseconds(16);
     }
-    return TimeForFrame.asMilliseconds();
+    return TimeForFrame.asSeconds();
 } 

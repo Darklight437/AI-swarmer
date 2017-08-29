@@ -48,9 +48,11 @@ Gameobject::~Gameobject()
      m_position.y = y;
  }
 
+
  void Gameobject::update()
  {
-     m_sprite.setPosition(m_position);
+     m_position = m_velocity;
+     m_sprite.move(m_position);
 
      
  }
