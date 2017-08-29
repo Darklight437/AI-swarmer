@@ -1,6 +1,7 @@
 #include "Gameobject.h"
 #include <Windows.h>
 #include "deltaClock.h"
+#include "Vmath.h"
 
 Gameobject::Gameobject()
 {
@@ -55,7 +56,17 @@ Gameobject::~Gameobject()
     //deltatime should live here
      
 
-     m_position += m_acceleration * (float)CLOCK->getelapsedTime();
+     m_position = m_acceleration * (float)CLOCK->getelapsedTime();
+    /* if (magnitude(m_position) > 2)
+     {
+         normalise(m_position);
+         m_position.x * 2;
+         m_position.y * 2;
+     }*/
+     if (m_sprite.getPosition().x > 900)
+     {
+         m_position.x = 0;
+     }
      m_sprite.move(m_position);
 
      
