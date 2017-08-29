@@ -59,6 +59,15 @@ void Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Pathing_n
 
 Pathing_node* Pathing_Walker::buildPath(Pathing_node * start, Pathing_node * end)
 {
+
+
+    //let the outside know that you have reached a node somehow?
+
+    Pathing_node* current
+    while (true)
+    {
+
+    }
     //follow the pointers back through the nodes to find the strat from the end and then return this in some form
     return;//no clue
 }
