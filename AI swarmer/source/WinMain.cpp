@@ -41,7 +41,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
         //tell objects to draw here
         
         //moves the objext towards the target this will have the a* as the target eventually
-        ((master*)miniship)->seekTarget(m_NodeManager->allNodes.back()->getPos());
+        ((master*)miniship)->steer(m_NodeManager->allNodes.back()->getPos());
         
         m_NodeManager->drawNodes(windowPtr);
 

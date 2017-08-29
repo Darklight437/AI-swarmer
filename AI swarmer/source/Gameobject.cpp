@@ -51,7 +51,9 @@ Gameobject::~Gameobject()
 
  void Gameobject::update()
  {
-     m_position = m_velocity;
+     //all movement happens HERE
+
+     m_position += m_acceleration;
      m_sprite.move(m_position);
 
      
