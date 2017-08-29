@@ -15,7 +15,7 @@ public:
 private:
 
     sf::Vector2f steeringForce;
-    float seekspeed = 400;
+    float seekspeed = 2;
 
 };
 
