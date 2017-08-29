@@ -11,6 +11,7 @@ public:
     Pathing_edge();
     ~Pathing_edge();
     float getCost();
+    bool drawn = false;
     Pathing_node* Node1;
     Pathing_node* Node2;
 
@@ -21,6 +22,6 @@ private:
     sf::RectangleShape m_line;
     void calculateRect();
     float m_cost;
-
+    
 };
 

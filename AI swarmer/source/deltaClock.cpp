@@ -30,9 +30,10 @@ double deltaClock::getelapsedTime()
     // gets time since last restart
     //is this ok?
     //probably a hack
-    if (TimeForFrame.asMilliseconds() > 16)
+
+    /*if (TimeForFrame.asMilliseconds() > 16)
     {
         TimeForFrame = sf::milliseconds(16);
-    }
+    }*/
     return TimeForFrame.asSeconds();
 } 

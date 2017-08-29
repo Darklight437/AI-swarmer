@@ -22,7 +22,7 @@ sf::Vector2f Seek::calculateForce(sf::Vector2f myPosition, sf::Vector2f targetPo
     steeringForce = targetPosition - myPosition;
     
     steeringForce = normalise(steeringForce);
-    steeringForce *= seekspeed * ((float)CLOCK->getelapsedTime());
+    steeringForce *= seekspeed;
 
 
     return steeringForce;

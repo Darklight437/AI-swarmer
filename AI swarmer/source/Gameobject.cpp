@@ -1,6 +1,6 @@
 #include "Gameobject.h"
 #include <Windows.h>
-
+#include "deltaClock.h"
 
 Gameobject::Gameobject()
 {
@@ -51,9 +51,11 @@ Gameobject::~Gameobject()
 
  void Gameobject::update()
  {
-     //all movement happens HERE
+    //all movement happens HERE
+    //deltatime should live here
+     
 
-     m_position += m_acceleration;
+     m_position += m_acceleration * (float)CLOCK->getelapsedTime();
      m_sprite.move(m_position);
 
      

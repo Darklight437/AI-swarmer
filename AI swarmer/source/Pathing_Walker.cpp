@@ -155,6 +155,16 @@ void Pathing_Walker::drawNodes(sf::RenderWindow* render)
 
     //render->draw(circle);
 
+    for (auto &node : allNodes)
+    {
+
+        for (auto &edge : allEdges)
+        {
+            edge->drawn = false;
+        }
+    }
+
+
     
     for (auto &node : allNodes) 
     {
@@ -163,7 +173,12 @@ void Pathing_Walker::drawNodes(sf::RenderWindow* render)
         
          for (auto &edge : allEdges)
         {
-            render->draw(*(edge->getEdge()));
+            if (!edge->drawn)
+            {
+                render->draw(*(edge->getEdge()));
+                edge->drawn = true;
+            }
+            
         }
     }
 }

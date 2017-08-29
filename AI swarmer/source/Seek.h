@@ -1,7 +1,6 @@
 #pragma once
 #include "Behavior.h"
 #include<SFML\Graphics\Transformable.hpp>
-#include "deltaClock.h"
 
 class Seek :
     public Behavior
@@ -15,7 +14,7 @@ public:
 private:
 
     sf::Vector2f steeringForce;
-    float seekspeed = 1000;
+    float seekspeed = 10;
 
 };
 
