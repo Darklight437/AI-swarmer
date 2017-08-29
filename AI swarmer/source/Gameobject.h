@@ -20,7 +20,7 @@ public:
   sf::Sprite m_sprite;
 protected:
     sf::Texture m_texture;
-    sf::Vector2f m_position;
+    sf::Vector2f m_velocity;
     sf::Vector2f m_acceleration;
 };
 

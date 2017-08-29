@@ -40,13 +40,13 @@ Gameobject::~Gameobject()
 
  void Gameobject::setPosition(sf::Vector2f position)
  {
-     m_position = position;
+     m_velocity = position;
  }
 
  void Gameobject::setPosition(float x, float y)
  {
-     m_position.x = x;
-     m_position.y = y;
+     m_velocity.x = x;
+     m_velocity.y = y;
  }
 
 
@@ -56,18 +56,18 @@ Gameobject::~Gameobject()
     //deltatime should live here
      
 
-     m_position = m_acceleration * (float)CLOCK->getelapsedTime();
+     m_velocity = m_acceleration * (float)CLOCK->getelapsedTime();
     /* if (magnitude(m_position) > 2)
      {
          normalise(m_position);
          m_position.x * 2;
          m_position.y * 2;
      }*/
-     if (m_sprite.getPosition().x > 900)
+     if (m_acceleration.x < 0)
      {
-         m_position.x = 0;
+         m_velocity.x = 0;
      }
-     m_sprite.move(m_position);
+     m_sprite.move(m_velocity);
 
      
  }

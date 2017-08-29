@@ -35,5 +35,10 @@ double deltaClock::getelapsedTime()
     {
         TimeForFrame = sf::milliseconds(16);
     }*/
-    return TimeForFrame.asSeconds();
+    double DT = TimeForFrame.asSeconds();
+    if (DT > 0.1f)
+    {
+        DT = 0.1f;
+    }
+    return DT;
 } 
