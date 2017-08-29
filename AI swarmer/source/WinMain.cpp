@@ -42,7 +42,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
         
         //moves the objext towards the target this will have the a* as the target eventually
         ((master*)miniship)->steer(m_NodeManager->allNodes.back()->getPos());
-        
+        miniship->update();
         m_NodeManager->drawNodes(windowPtr);
 
         window.draw(miniship->m_sprite);
