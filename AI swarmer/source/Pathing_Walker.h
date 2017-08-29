@@ -17,7 +17,7 @@ public:
     void Astar(NodeList, Pathing_node* startNode, Pathing_node* targetNode);
 
     //tracks back through the connected nodes to make a path
-    void buildPath(Pathing_node* start, Pathing_node* end);
+    Pathing_node* buildPath(Pathing_node* start, Pathing_node* end);
 
     //return the lowest Fscore
     Pathing_node* bestScore(NodeList openList);

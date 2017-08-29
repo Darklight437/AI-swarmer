@@ -21,9 +21,10 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
     
 
     m_NodeManager->generateNodes();
+    //sets the path for the walker
+    m_NodeManager->Astar(m_NodeManager->allNodes, m_NodeManager->allNodes.back(), m_NodeManager->allNodes.front());
 
-
-
+    m_NodeManager->buildPath
 
     while (window.isOpen())
     {
@@ -45,7 +46,9 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
         //tell objects to draw here
         
         //moves the objext towards the target this will have the a* as the target eventually
-        ((master*)miniship)->steer(m_NodeManager->allNodes.back()->getPos());
+
+
+        ((master*)miniship)->steer();
         miniship->update();
         
         m_NodeManager->drawNodes(windowPtr);
