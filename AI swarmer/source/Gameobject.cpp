@@ -57,16 +57,8 @@ Gameobject::~Gameobject()
      
 
      m_velocity = m_acceleration * (float)CLOCK->getelapsedTime();
-    /* if (magnitude(m_position) > 2)
-     {
-         normalise(m_position);
-         m_position.x * 2;
-         m_position.y * 2;
-     }*/
-     if (m_acceleration.x < 0)
-     {
-         m_velocity.x = 0;
-     }
+
+
      m_sprite.move(m_velocity);
 
      
