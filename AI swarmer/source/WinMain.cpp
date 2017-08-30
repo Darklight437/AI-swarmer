@@ -46,8 +46,9 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
         
         //moves the objext towards the target this will have the a* as the target eventually
 
-
-        ((master*)miniship)->steer();
+        //put a* path in the arguments for steer
+        //or do some sort of walker function that checks the position of miniship and feeds it the current seek target
+        //((master*)miniship)->steer();
         miniship->update();
         
         m_NodeManager->drawNodes(windowPtr);

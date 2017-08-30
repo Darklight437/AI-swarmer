@@ -39,14 +39,30 @@ Pathing_node* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, 
             //probably break out here or something
         }
         //find all the neighbours of this current node
+        //and add them to the potential route
         for (auto neighbour: current->connections)
         {
-            if (std::find(closedSet.begin(),closedSet.end(),neighbour->Node1 || neighbour->Node2) != closedSet.end())
+            //check if node 1 is in the closedSet
+            if (std::find(closedSet.begin(),closedSet.end(),neighbour->Node1) != closedSet.end())
             {
-
+                //do nothing to node1
+            }
+            //node one is not in the closedSet
+            else
+            {
+                openSet.push_back(neighbour->Node1);
             }
 
-
+            //same as above but for node 2
+            if (std::find(closedSet.begin(), closedSet.end(), neighbour->Node2) != closedSet.end())
+            {
+                //do nothing to node2
+            }
+            //node one is not in the closedSet
+            else
+            {
+                openSet.push_back(neighbour->Node2);
+            }
         }
 
         
