@@ -20,6 +20,15 @@ Pathing_node* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, 
     NodeList closedSet;
     NodeList openSet;
     
+
+    //attempting to path to the node you are already at
+    if (startNode == targetNode)
+    {
+
+        //break and just tell it to move to where it is already
+        return startNode;
+    }
+
     startNode->m_previous = nullptr;
     startNode->Gscore = 0;
 
@@ -38,10 +47,17 @@ Pathing_node* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, 
             buildPath(current, startNode);
             //probably break out here or something
         }
+
+
+        openSet.remove(current);
+        closedSet.push_front(current);
+
+
         //find all the neighbours of this current node
         //and add them to the potential route
         for (auto neighbour: current->connections)
         {
+            bool node1IsNew;
             //check if node 1 is in the closedSet
             if (std::find(closedSet.begin(),closedSet.end(),neighbour->Node1) != closedSet.end())
             {
@@ -51,6 +67,7 @@ Pathing_node* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, 
             else
             {
                 openSet.push_back(neighbour->Node1);
+                node1IsNew = true;
             }
 
             //same as above but for node 2
@@ -61,8 +78,25 @@ Pathing_node* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, 
             //node one is not in the closedSet
             else
             {
+                //add it to potential path
                 openSet.push_back(neighbour->Node2);
+                node1IsNew = false;
             }
+            //get the distance from start to a neighbouring node
+
+            Pathing_node* node;
+            if (node1IsNew)
+            {
+                node = neighbour->Node1;
+            }
+            else
+            {
+                node = neighbour->Node2;
+            }
+
+            float tempGscore = current->Gscore + distBetween(current, node);
+
+
         }
 
         
@@ -71,19 +105,10 @@ Pathing_node* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, 
 
 
 
-        openSet.remove(current);
-        closedSet.push_front(current);
 
 
-
-       //attempting to path to the node you are already at
-        if (startNode == targetNode)
-        {   
-
-            //break and explode
-            return;
-        }
-
+      
+        return current;
     }
 }
 

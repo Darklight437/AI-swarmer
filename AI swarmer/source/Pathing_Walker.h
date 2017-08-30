@@ -24,6 +24,9 @@ public:
     //return the lowest Fscore
     Pathing_node* bestScore(NodeList openList);
 
+    //get the sistance between two nodes
+    float distBetween(Pathing_node*, Pathing_node*);
+
     //generates a default node block
     void generateNodes();
 
