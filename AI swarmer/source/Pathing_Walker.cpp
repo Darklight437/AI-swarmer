@@ -14,7 +14,7 @@ Pathing_Walker::~Pathing_Walker()
 
 
 
-void Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Pathing_node* targetNode)
+Pathing_node* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Pathing_node* targetNode)
 {
     NodeList closedSet;
     NodeList openSet;
@@ -46,9 +46,10 @@ void Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Pathing_n
       
 
         closedSet.push_front(current);
-       
+       //attempting to path to the node you are already at
         if (startNode == targetNode)
         {   
+
             //break and explode
             return;
         }
@@ -61,8 +62,8 @@ Pathing_node* Pathing_Walker::buildPath(Pathing_node * start, Pathing_node * end
 {
 
 
-    //let the outside know that you have reached a node somehow?
-
+    //just link all the nodes and return the first node in the list as a pointer
+    //so this should step back through the pointers and confirm that they all link and if the
     Pathing_node* current
     while (true)
     {

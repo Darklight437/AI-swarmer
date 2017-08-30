@@ -14,9 +14,11 @@ public:
     std::list<Pathing_node*> allNodes;
     std::list<Pathing_edge*> allEdges;
     //built from wikipedia's psuedocode mostly
-    void Astar(NodeList, Pathing_node* startNode, Pathing_node* targetNode);
+    //returns a pointer to the first node in the list that is linked to the end node through the best possible path
+    Pathing_node* Astar(NodeList, Pathing_node* startNode, Pathing_node* targetNode);
 
     //tracks back through the connected nodes to make a path
+    //mostly just in use to simplify code in a*
     Pathing_node* buildPath(Pathing_node* start, Pathing_node* end);
 
     //return the lowest Fscore
@@ -25,11 +27,16 @@ public:
     //generates a default node block
     void generateNodes();
 
+
     void generateSingleNode();
+
 
     void movenodes();
 
+
     void drawNodes(sf::RenderWindow* render);
+
+
 
     //square root of the radius to check for nodes
     float squaredRadius = 14400;
