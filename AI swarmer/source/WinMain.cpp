@@ -24,7 +24,6 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
     //sets the path for the walker
     m_NodeManager->Astar(m_NodeManager->allNodes, m_NodeManager->allNodes.back(), m_NodeManager->allNodes.front());
 
-    m_NodeManager->buildPath
 
     while (window.isOpen())
     {

@@ -17,7 +17,7 @@ public:
     //returns a pointer to the first node in the list that is linked to the end node through the best possible path
     Pathing_node* Astar(NodeList, Pathing_node* startNode, Pathing_node* targetNode);
 
-    //tracks back through the connected nodes to make a path
+    //tracks back through the connected nodes and evaluates the cheapest path
     //mostly just in use to simplify code in a*
     Pathing_node* buildPath(Pathing_node* start, Pathing_node* end);
 

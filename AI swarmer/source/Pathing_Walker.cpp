@@ -1,6 +1,7 @@
 #include "Pathing_Walker.h"
 #include "SFML\Window\Mouse.hpp"
-
+#include <algorithm>
+#include <list>
 
 Pathing_Walker::Pathing_Walker()
 {
@@ -30,22 +31,35 @@ Pathing_node* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, 
         Pathing_node* current;
         //find the lowest fscore node
         current = bestScore(openSet);
+
         //if you find the end
         if (current == targetNode)
         {
             buildPath(current, startNode);
             //probably break out here or something
         }
-        
+        //find all the neighbours of this current node
+        for (auto neighbour: current->connections)
+        {
+            if (std::find(closedSet.begin(),closedSet.end(),neighbour->Node1 || neighbour->Node2) != closedSet.end())
+            {
 
-        //get all connected nodes
+            }
+
+
+        }
+
+        
        
-     //   NodeList connectedNodes = current->connections;
-        
-        openSet.remove(current);
-      
+            
 
+
+
+        openSet.remove(current);
         closedSet.push_front(current);
+
+
+
        //attempting to path to the node you are already at
         if (startNode == targetNode)
         {   
@@ -60,17 +74,18 @@ Pathing_node* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, 
 
 Pathing_node* Pathing_Walker::buildPath(Pathing_node * start, Pathing_node * end)
 {
-
+    Pathing_node* current = start;
 
     //just link all the nodes and return the first node in the list as a pointer
     //so this should step back through the pointers and confirm that they all link and if the
-    Pathing_node* current
-    while (true)
+    
+    while (current->m_previous != nullptr)
     {
 
     }
     //follow the pointers back through the nodes to find the strat from the end and then return this in some form
-    return;//no clue
+    //make sure everything is linked before returning this
+    return current;
 }
 
 
