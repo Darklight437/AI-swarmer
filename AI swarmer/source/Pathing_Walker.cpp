@@ -93,16 +93,16 @@ Pathing_node* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, 
             //if you reach here this is the best path so far
             neighbour->otherNode(current)->m_previous = current;
             neighbour->otherNode(current)->Gscore = tentativeGscore;
-            neighbour->otherNode(current)->Fscore = tentativeGscore + hueristicCostEstimate(neighbour->otherNode(current), targetNode);
+            neighbour->otherNode(current)->Fscore = tentativeGscore + distBetween(neighbour->otherNode(current), targetNode);
 
         }
 
         
     }
 
-        
-       
-            
+    
+    
+    
 
 
 
@@ -111,23 +111,24 @@ Pathing_node* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, 
       
         return nullptr;
     }
-}
+
 
 
 Pathing_node* Pathing_Walker::buildPath(Pathing_node * start, Pathing_node * end)
 {
-    Pathing_node* current = start;
+    Pathing_node* current = end;
 
-    //just link all the nodes and return the first node in the list as a pointer
-    //so this should step back through the pointers and confirm that they all link and if the
-    
     while (current->m_previous != nullptr)
     {
-
+        current = current->m_previous;
     }
-    //follow the pointers back through the nodes to find the strat from the end and then return this in some form
-    //make sure everything is linked before returning this
-    return current;
+
+    if (current == start)
+    {
+        return current;
+    }
+    
+    
 }
 
 
