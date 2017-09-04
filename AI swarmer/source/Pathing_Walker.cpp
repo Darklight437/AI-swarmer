@@ -79,13 +79,21 @@ Pathing_node* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, 
             
             //get the gscore based off distance from start to a neighbouring node
             //aaah
+
+
             float tentativeGscore = current->Gscore + distBetween(current, neighbour->otherNode(current));
+
             //if the cost of travelling is higher than the cost of 
-            if (tentativeGscore < neighbour->otherNode(current)->Gscore)
+            if (tentativeGscore >= neighbour->otherNode(current)->Gscore)
             {
-                //this is the best path so far
-                break;
+                //this is not a better path
+                continue;
             }
+
+            //if you reach here this is the best path so far
+            neighbour->otherNode(current)->m_previous = current;
+            neighbour->otherNode(current)->Gscore = tentativeGscore;
+            neighbour->otherNode(current)->Fscore = tentativeGscore + hueristicCostEstimate(neighbour->otherNode(current), targetNode);
 
         }
 
@@ -101,7 +109,7 @@ Pathing_node* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, 
 
     //shh no problem here comrade
       
-        return Pathing_node;
+        return nullptr;
     }
 }
 

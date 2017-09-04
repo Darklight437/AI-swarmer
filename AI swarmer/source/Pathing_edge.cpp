@@ -13,10 +13,6 @@ Pathing_edge::~Pathing_edge()
 {
 }
 
-float Pathing_edge::getCost()
-{
-    return m_cost;
-}
 
 Pathing_node * Pathing_edge::otherNode(Pathing_node * thisNode)
 {
