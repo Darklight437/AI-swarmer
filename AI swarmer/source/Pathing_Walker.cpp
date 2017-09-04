@@ -63,34 +63,34 @@ Pathing_node* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, 
             //check if the neighbour is in the closedSet
             if (std::find(closedSet.begin(),closedSet.end(),neighbour->otherNode(current)) != closedSet.end())
             {
-                //do nothing to node1
-            }
-            //node one is not in the closedSet
-            //throw it in the list of potential paths
-            else
-            {
-                openSet.push_back(neighbour->Node1);
-                
+                //ignore neighbour as already evaluated
+                continue;
             }
 
+            //node is not in the closedSet
+            //throw it in the list of potential paths if it isn't already
+            if (std::find(openSet.begin(), openSet.end(), neighbour->otherNode(current)) != openSet.end())
+            {
+                openSet.push_back(neighbour->Node1);
+            }
+            
+                
+            
             
             //get the gscore based off distance from start to a neighbouring node
             //aaah
             float tentativeGscore = current->Gscore + distBetween(current, neighbour->otherNode(current));
-            //if the distance is higher than 
-            if (tentativeGscore >= neighbour->otherNode(current)->Gscore)
+            //if the cost of travelling is higher than the cost of 
+            if (tentativeGscore < neighbour->otherNode(current)->Gscore)
             {
-
-
-                
+                //this is the best path so far
+                break;
             }
 
         }
-            
-           
 
-
-        }
+        
+    }
 
         
        
