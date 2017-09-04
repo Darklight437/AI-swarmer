@@ -128,7 +128,7 @@ Pathing_node* Pathing_Walker::buildPath(Pathing_node * start, Pathing_node * end
         return current;
     }
     
-    
+    return nullptr;
 }
 
 

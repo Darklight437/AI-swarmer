@@ -9,7 +9,7 @@
 
 int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine, int cmdShow)
 {
-    sf::RenderWindow window(sf::VideoMode(1680, 1060), "Swarmlings");
+    sf::RenderWindow window(sf::VideoMode(1680, 1050), "Swarmlings");
     sf::RenderWindow* windowPtr = &window;
     Pathing_Walker* m_NodeManager = new Pathing_Walker;
 
@@ -21,8 +21,8 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
     
 
     m_NodeManager->generateNodes();
-    //sets the path for the walker
-    m_NodeManager->Astar(m_NodeManager->allNodes, m_NodeManager->allNodes.back(), m_NodeManager->allNodes.front());
+    //sets the path for the walker to move from the top left to the top right
+    Pathing_node* target = m_NodeManager->Astar(m_NodeManager->allNodes, m_NodeManager->allNodes.back(), m_NodeManager->allNodes.front());
 
 
     while (window.isOpen())

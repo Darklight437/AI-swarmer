@@ -1,6 +1,7 @@
 #include "master.h"
 #include"Behavior.h"
 #include "Seek.h"
+#include "Pathing_Walker.h"
 
 void master::loadSprite()
 {
@@ -32,4 +33,9 @@ void master::steer(sf::Vector2f target)
   //how to actually move towards this position pl0x
   m_acceleration = steering;
 
+}
+
+void master::seekPath(Pathing_node * firstElement)
+{
+    //go to a place, check if you are within a distance from it and then set the seek to the next part
 }
