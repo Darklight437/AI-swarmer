@@ -2,6 +2,8 @@
 #include "SFML\Window\Mouse.hpp"
 #include <algorithm>
 #include <list>
+#include <cmath>
+
 
 Pathing_Walker::Pathing_Walker()
 {
@@ -74,12 +76,18 @@ Pathing_node* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, 
             
             //get the gscore based off distance from start to a neighbouring node
             //aaah
-            
+            float tentativeGscore = current->Gscore + distBetween(current, neighbour->otherNode(current));
+            //if the distance is higher than 
+            if (tentativeGscore >= neighbour->otherNode(current)->Gscore)
+            {
 
+
+                
+            }
 
         }
-            //should this even be here?
-           // float tempGscore = current->Gscore + distBetween(current, node);
+            
+           
 
 
         }
@@ -91,7 +99,7 @@ Pathing_node* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, 
 
 
 
-    //shh
+    //shh no problem here comrade
       
         return Pathing_node;
     }
@@ -142,7 +150,7 @@ Pathing_node * Pathing_Walker::bestScore(NodeList openList)
 }
 
 
-//returns the squared distance because squrts are apparently the devil
+//returns the distance between two nodes;
 float Pathing_Walker::distBetween(Pathing_node * currNode, Pathing_node * targetNode)
 {
     float tempX = 0;
@@ -153,6 +161,7 @@ float Pathing_Walker::distBetween(Pathing_node * currNode, Pathing_node * target
     tempY = currNode->getPos().y;
     tempY *= tempY;
     squaredDist = tempX + tempY;
+    squaredDist = sqrtf(squaredDist);
     return squaredDist;
 }
 
