@@ -18,6 +18,18 @@ float Pathing_edge::getCost()
     return m_cost;
 }
 
+Pathing_node * Pathing_edge::otherNode(Pathing_node * thisNode)
+{
+    if (Node1 == thisNode)
+    {
+        return Node2;
+    }
+    else
+    {
+        return Node1;
+    }
+}
+
 sf::RectangleShape * Pathing_edge::getEdge()
 {
     calculateRect();

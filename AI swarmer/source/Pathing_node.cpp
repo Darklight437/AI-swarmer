@@ -23,6 +23,7 @@ Pathing_node::~Pathing_node()
 
 sf::Vector2f Pathing_node::getPos()
 {
+    m_position = circle.getPosition();
     return m_position;
 }
 

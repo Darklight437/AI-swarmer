@@ -57,44 +57,29 @@ Pathing_node* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, 
         //and add them to the potential route
         for (auto neighbour: current->connections)
         {
-            bool node1IsNew;
-            //check if node 1 is in the closedSet
-            if (std::find(closedSet.begin(),closedSet.end(),neighbour->Node1) != closedSet.end())
+            
+            //check if the neighbour is in the closedSet
+            if (std::find(closedSet.begin(),closedSet.end(),neighbour->otherNode(current)) != closedSet.end())
             {
                 //do nothing to node1
             }
             //node one is not in the closedSet
+            //throw it in the list of potential paths
             else
             {
                 openSet.push_back(neighbour->Node1);
-                node1IsNew = true;
+                
             }
 
-            //same as above but for node 2
-            if (std::find(closedSet.begin(), closedSet.end(), neighbour->Node2) != closedSet.end())
-            {
-                //do nothing to node2
-            }
-            //node one is not in the closedSet
-            else
-            {
-                //add it to potential path
-                openSet.push_back(neighbour->Node2);
-                node1IsNew = false;
-            }
-            //get the distance from start to a neighbouring node
+            
+            //get the gscore based off distance from start to a neighbouring node
+            //aaah
+            
 
-            Pathing_node* node;
-            if (node1IsNew)
-            {
-                node = neighbour->Node1;
-            }
-            else
-            {
-                node = neighbour->Node2;
-            }
 
-            float tempGscore = current->Gscore + distBetween(current, node);
+        }
+            //should this even be here?
+           // float tempGscore = current->Gscore + distBetween(current, node);
 
 
         }
@@ -106,9 +91,9 @@ Pathing_node* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, 
 
 
 
-
+    //shh
       
-        return current;
+        return Pathing_node;
     }
 }
 
@@ -154,6 +139,21 @@ Pathing_node * Pathing_Walker::bestScore(NodeList openList)
     }
 
     return lowest;
+}
+
+
+//returns the squared distance because squrts are apparently the devil
+float Pathing_Walker::distBetween(Pathing_node * currNode, Pathing_node * targetNode)
+{
+    float tempX = 0;
+    float tempY = 0;
+    float squaredDist = 0;
+    tempX = currNode->getPos().x;
+    tempX *= tempX;
+    tempY = currNode->getPos().y;
+    tempY *= tempY;
+    squaredDist = tempX + tempY;
+    return squaredDist;
 }
 
 void Pathing_Walker::generateNodes()

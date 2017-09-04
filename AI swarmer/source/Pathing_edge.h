@@ -14,7 +14,7 @@ public:
     bool drawn = false;
     Pathing_node* Node1;
     Pathing_node* Node2;
-
+    Pathing_node* otherNode(Pathing_node* thisNode);
     //returns the sf::shape as a pointer that represents the edge
     sf::RectangleShape* getEdge();
 

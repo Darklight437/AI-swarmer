@@ -25,7 +25,7 @@ public:
     Pathing_node* bestScore(NodeList openList);
 
     //get the sistance between two nodes
-    float distBetween(Pathing_node*, Pathing_node*);
+    float distBetween(Pathing_node* currNode, Pathing_node* targetNode);
 
     //generates a default node block
     void generateNodes();
