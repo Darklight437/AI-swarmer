@@ -22,7 +22,7 @@ NodeList* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Path
     NodeList closedSet;
     NodeList openSet;
     NodeList path;
-    //AAAH
+    
 
     //attempting to path to the node you are already at
     if (startNode == targetNode)
@@ -74,7 +74,14 @@ NodeList* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Path
 
             //node is not in the closedSet
             //throw it in the list of potential paths if it isn't already
+
+            //something not working as intended
+            //if node NOT in openset
             if (std::find(openSet.begin(), openSet.end(), neighbour->otherNode(current)) != openSet.end())
+            {
+            
+            }
+            else
             {
                 openSet.push_back(neighbour->Node1);
             }

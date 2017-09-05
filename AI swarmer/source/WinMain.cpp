@@ -22,7 +22,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
 
     m_NodeManager->generateNodes();
     //sets the path for the walker to move from the top left to the top right
-    NodeList* path = m_NodeManager->Astar(m_NodeManager->allNodes, m_NodeManager->allNodes.back(), m_NodeManager->allNodes.front());
+    NodeList* path = m_NodeManager->Astar(m_NodeManager->allNodes, m_NodeManager->allNodes.front(), m_NodeManager->allNodes.back());
 
 
     while (window.isOpen())
