@@ -15,8 +15,8 @@ public:
     Pathing_node();
     ~Pathing_node();
 
-    //the node that this node can be most efficiently reached from
-    Pathing_node* m_previous;
+   
+    
     
 
     

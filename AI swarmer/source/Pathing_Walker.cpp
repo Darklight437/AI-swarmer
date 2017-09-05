@@ -116,19 +116,25 @@ NodeList* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Path
 
 
 
-Pathing_node* Pathing_Walker::buildPath(Pathing_node * start, Pathing_node * end)
+NodeList* Pathing_Walker::buildPath(Pathing_node * start, Pathing_node * end)
 {
     Pathing_node* current = end;
-
-    while (current->m_previous != nullptr)
+    NodeList* finalPath;
+    bool startFound = false;
+    while (!startFound)
     {
+        if (current == start)
+        {
+            startFound == true;
+        }
+
+        finalPath->push_back(current);
         current = current->m_previous;
+
+
     }
 
-    if (current == start)
-    {
-        return current;
-    }
+   
     
     return nullptr;
 }

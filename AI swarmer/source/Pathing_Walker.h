@@ -19,7 +19,7 @@ public:
 
     //tracks back through the connected nodes and evaluates the cheapest path
     //mostly just in use to simplify code in a*
-    Pathing_node* buildPath(Pathing_node* start, Pathing_node* end);
+    NodeList* buildPath(Pathing_node* start, Pathing_node* end);
 
     //return the lowest Fscore
     Pathing_node* bestScore(NodeList openList);
