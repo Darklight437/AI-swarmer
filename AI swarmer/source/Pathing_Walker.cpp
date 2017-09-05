@@ -21,7 +21,7 @@ NodeList* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Path
 {
     NodeList closedSet;
     NodeList openSet;
-    NodeList* path;
+    NodeList path;
     //AAAH
 
     //attempting to path to the node you are already at
@@ -29,8 +29,8 @@ NodeList* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Path
     {
 
         //break and just tell it to move to where it is already
-        path->push_front(startNode);
-        return path;
+        path.push_front(startNode);
+        return &path;
     }
 
     startNode->m_previous = nullptr;
@@ -49,9 +49,10 @@ NodeList* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Path
         if (current == targetNode)
         {
 
-            path = buildPath(current, startNode);
+            path = *buildPath(current, startNode);
             //this is the  "i'm done bit"
-            return path;
+            
+            return &path;
         }
 
 
@@ -147,7 +148,7 @@ NodeList* Pathing_Walker::buildPath(Pathing_node * start, Pathing_node * end)
 
 
 //return the lowest Fscore 
-Pathing_node * Pathing_Walker::bestScore(NodeList openList)
+Pathing_node* Pathing_Walker::bestScore(NodeList openList)
 {
     Pathing_node* lowest = openList.front();
     Pathing_node* current = openList.front();
