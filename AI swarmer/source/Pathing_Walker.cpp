@@ -17,18 +17,20 @@ Pathing_Walker::~Pathing_Walker()
 
 
 
-Pathing_node* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Pathing_node* targetNode)
+NodeList* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Pathing_node* targetNode)
 {
     NodeList closedSet;
     NodeList openSet;
-    
+    NodeList* path;
+    //AAAH
 
     //attempting to path to the node you are already at
     if (startNode == targetNode)
     {
 
         //break and just tell it to move to where it is already
-        return startNode;
+        path->push_front(startNode);
+        return path;
     }
 
     startNode->m_previous = nullptr;

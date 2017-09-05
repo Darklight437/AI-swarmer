@@ -2,6 +2,7 @@
 #include <Windows.h>
 #include "deltaClock.h"
 #include "Vmath.h"
+#include <cmath>
 
 Gameobject::Gameobject()
 {
@@ -62,5 +63,17 @@ Gameobject::~Gameobject()
      m_sprite.move(m_velocity);
 
      
+ }
+
+ float Gameobject::findDistFromMe(sf::Vector2f target)
+ {
+     sf::Vector2f targetVect;
+    targetVect = m_sprite.getPosition() - target;
+
+    float newX = targetVect.x * targetVect.x;
+    float newY = targetVect.y * targetVect.y;
+
+    float distance = sqrt(newX + newY);
+
  }
 

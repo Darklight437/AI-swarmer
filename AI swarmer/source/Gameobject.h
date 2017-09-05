@@ -16,7 +16,7 @@ public:
   void setPosition(float x, float y);
   //occur every frame updating the transform if it has ben changed etc
   void update();
-
+  float findDistFromMe(sf::Vector2f target);
   sf::Sprite m_sprite;
 protected:
     sf::Texture m_texture;

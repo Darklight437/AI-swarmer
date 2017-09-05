@@ -24,7 +24,7 @@ master::~master()
 {
     delete myAgent;
 }
-
+//seeks a dingle point
 void master::steer(sf::Vector2f target)
 {
     sf::Vector2f steering;
@@ -34,8 +34,16 @@ void master::steer(sf::Vector2f target)
   m_acceleration = steering;
 
 }
-
+//seeks a full path
 void master::seekPath(Pathing_node * firstElement)
 {
     //go to a place, check if you are within a distance from it and then set the seek to the next part
+    Pathing_node* currNode = firstElement;
+    while (currNode->m_previous != nullptr)
+    {
+
+    }
+    steer();
+
+
 }
