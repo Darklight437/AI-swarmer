@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <list>
 #include <cmath>
+#include "Vmath.h"
 
 
 Pathing_Walker::Pathing_Walker()
@@ -199,16 +200,17 @@ Pathing_node* Pathing_Walker::bestScore(NodeList openList)
 //returns the distance between two nodes;
 float Pathing_Walker::distBetween(Pathing_node * currNode, Pathing_node * targetNode)
 {
-    float tempX = 0;
-    float tempY = 0;
-    float squaredDist = 0;
-    tempX = currNode->getPos().x;
-    tempX *= tempX;
-    tempY = currNode->getPos().y;
-    tempY *= tempY;
-    squaredDist = tempX + tempY;
-    squaredDist = sqrtf(squaredDist);
-    return squaredDist;
+    return (magnitude(currNode->getPos() - targetNode->getPos()));
+    //float tempX = 0;
+    //float tempY = 0;
+    //float squaredDist = 0;
+    //tempX = currNode->getPos().x;
+    //tempX *= tempX;
+    //tempY = currNode->getPos().y;
+    //tempY *= tempY;
+    //squaredDist = tempX + tempY;
+    //squaredDist = sqrtf(squaredDist);
+    //return squaredDist;
 }
 
 void Pathing_Walker::generateNodes()
