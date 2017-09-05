@@ -129,11 +129,14 @@ NodeList* Pathing_Walker::buildPath(Pathing_node * start, Pathing_node * end)
         }
 
         finalPath->push_back(current);
+        current->m_previous = nullptr;
         current = current->m_previous;
 
-
     }
-
+    if (startFound)
+    {
+        return finalPath;
+    }
    
     
     return nullptr;
@@ -243,9 +246,7 @@ void Pathing_Walker::movenodes()
 void Pathing_Walker::drawNodes(sf::RenderWindow* render)
 {
 
-    //sf::CircleShape circle(20);
 
-    //render->draw(circle);
 
     for (auto &node : allNodes)
     {
