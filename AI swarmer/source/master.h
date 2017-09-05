@@ -17,5 +17,6 @@ public:
 private:
     Agent* myAgent;
     NodeList::iterator It;
+    bool movingToPath = true;
 };
 

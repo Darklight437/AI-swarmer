@@ -38,16 +38,19 @@ void master::steer(sf::Vector2f target)
 void master::seekPath(NodeList path)
 {
     //go to a place, check if you are within a distance from it and then set the seek to the next part
-
-   
+        
+    if (movingToPath)
+    {
         It = path.begin();
-
+    }
+        
     
-        steer((*It)->circle.getPosition());
-        if (findDistFromMe((*It)->circle.getPosition()) < 100)
-        {
-            It++;
-        }
+    steer((*It)->circle.getPosition());
+    if (findDistFromMe((*It)->circle.getPosition()) < 30)
+    {
+         It++;
+        movingToPath = false;
+    }
     
     
 
