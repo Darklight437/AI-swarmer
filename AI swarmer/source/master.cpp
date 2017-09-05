@@ -35,15 +35,21 @@ void master::steer(sf::Vector2f target)
 
 }
 //seeks a full path
-void master::seekPath(Pathing_node * firstElement)
+void master::seekPath(NodeList* path)
 {
     //go to a place, check if you are within a distance from it and then set the seek to the next part
-    Pathing_node* currNode = firstElement;
-    while (currNode->m_previous != nullptr)
-    {
 
+    
+    NodeList::iterator It = path->begin();
+    while ((*It)->m_previous )
+    {
+        steer((*It)->circle.getPosition());
+        if (findDistFromMe((*It)->circle.getPosition()) < 10)
+        {
+            It++;
+        }
     }
-    steer();
+    
 
 
 }

@@ -74,6 +74,6 @@ Gameobject::~Gameobject()
     float newY = targetVect.y * targetVect.y;
 
     float distance = sqrt(newX + newY);
-
+    return distance;
  }
 

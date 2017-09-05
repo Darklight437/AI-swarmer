@@ -1,6 +1,7 @@
 #pragma once
 #include "Gameobject.h"
 #include "Agent.h"
+#include "Pathing_Walker.h"
 class master :
     public Gameobject
 {
@@ -11,7 +12,7 @@ public:
     master();
     ~master();
     void steer(sf::Vector2f target);
-    void seekPath(Pathing_node* firstElement);
+    void seekPath(NodeList* firstElement);
 
 private:
     Agent* myAgent;
