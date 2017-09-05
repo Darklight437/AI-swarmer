@@ -39,8 +39,9 @@ void master::seekPath(NodeList* path)
 {
     //go to a place, check if you are within a distance from it and then set the seek to the next part
 
-    
+   
     NodeList::iterator It = path->begin();
+
     while ((*It)->m_previous )
     {
         steer((*It)->circle.getPosition());

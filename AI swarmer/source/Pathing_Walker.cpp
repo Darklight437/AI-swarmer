@@ -48,8 +48,10 @@ NodeList* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Path
         //if you find the end
         if (current == targetNode)
         {
-            buildPath(current, startNode);
-            //probably break out here or something
+
+            path = buildPath(current, startNode);
+            //this is the  "i'm dont bit"
+            return path;
         }
 
 
