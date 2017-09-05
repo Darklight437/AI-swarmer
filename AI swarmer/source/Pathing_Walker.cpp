@@ -50,7 +50,7 @@ NodeList* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Path
         {
 
             path = buildPath(current, startNode);
-            //this is the  "i'm dont bit"
+            //this is the  "i'm done bit"
             return path;
         }
 
@@ -82,7 +82,7 @@ NodeList* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Path
             
             
             //get the gscore based off distance from start to a neighbouring node
-            //aaah
+            
 
 
             float tentativeGscore = current->Gscore + distBetween(current, neighbour->otherNode(current));
@@ -96,6 +96,7 @@ NodeList* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Path
 
             //if you reach here this is the best path so far
             neighbour->otherNode(current)->m_previous = current;
+
             neighbour->otherNode(current)->Gscore = tentativeGscore;
             neighbour->otherNode(current)->Fscore = tentativeGscore + distBetween(neighbour->otherNode(current), targetNode);
 
