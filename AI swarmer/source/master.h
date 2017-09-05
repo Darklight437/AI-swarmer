@@ -12,9 +12,10 @@ public:
     master();
     ~master();
     void steer(sf::Vector2f target);
-    void seekPath(NodeList* firstElement);
+    void seekPath(NodeList firstElement);
 
 private:
     Agent* myAgent;
+    NodeList::iterator It;
 };
 

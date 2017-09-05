@@ -17,11 +17,11 @@ Pathing_Walker::~Pathing_Walker()
 
 
 
-NodeList* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Pathing_node* targetNode)
+NodeList Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Pathing_node* targetNode)
 {
     NodeList closedSet;
     NodeList openSet;
-    NodeList path;
+    NodeList path ;
     
 
     //attempting to path to the node you are already at
@@ -30,7 +30,7 @@ NodeList* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Path
 
         //break and just tell it to move to where it is already
         path.push_front(startNode);
-        return &path;
+        return path;
     }
 
     startNode->m_previous = nullptr;
@@ -49,10 +49,10 @@ NodeList* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Path
         if (current == targetNode)
         {
 
-            path = *buildPath(current, startNode);
+            path = buildPath( startNode, targetNode);
             //this is the  "i'm done bit"
             
-            return &path;
+            return path;
         }
 
 
@@ -79,11 +79,39 @@ NodeList* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Path
             //if node NOT in openset
             if (std::find(openSet.begin(), openSet.end(), neighbour->otherNode(current)) != openSet.end())
             {
-            
+                float tentativeGscore = current->Gscore + distBetween(current, neighbour->otherNode(current));
+
+                //if the cost of travelling is higher than the cost of 
+                if (tentativeGscore >= neighbour->otherNode(current)->Gscore)
+                {
+                    //this is not a better path
+                    continue;
+                }
+
+                //if you reach here this is the best path so far
+                neighbour->otherNode(current)->m_previous = current;
+                neighbour->otherNode(current)->Gscore = tentativeGscore;
+                neighbour->otherNode(current)->Fscore = tentativeGscore + distBetween(neighbour->otherNode(current), targetNode);
+
             }
             else
             {
-                openSet.push_back(neighbour->Node1);
+                openSet.push_back(neighbour->otherNode(current));
+
+
+                float tentativeGscore = current->Gscore + distBetween(current, neighbour->otherNode(current));
+
+                ////if the cost of travelling is higher than the cost of 
+                //if (tentativeGscore >= neighbour->otherNode(current)->Gscore)
+                //{
+                //    //this is not a better path
+                //    continue;
+                //}
+
+                //if you reach here this is the best path so far
+                neighbour->otherNode(current)->m_previous = current;
+                neighbour->otherNode(current)->Gscore = tentativeGscore;
+                neighbour->otherNode(current)->Fscore = tentativeGscore + distBetween(neighbour->otherNode(current), targetNode);
             }
             
                 
@@ -93,21 +121,7 @@ NodeList* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Path
             
 
 
-            float tentativeGscore = current->Gscore + distBetween(current, neighbour->otherNode(current));
-
-            //if the cost of travelling is higher than the cost of 
-            if (tentativeGscore >= neighbour->otherNode(current)->Gscore)
-            {
-                //this is not a better path
-                continue;
-            }
-
-            //if you reach here this is the best path so far
-            neighbour->otherNode(current)->m_previous = current;
-
-            neighbour->otherNode(current)->Gscore = tentativeGscore;
-            neighbour->otherNode(current)->Fscore = tentativeGscore + distBetween(neighbour->otherNode(current), targetNode);
-
+           
         }
 
         
@@ -122,25 +136,26 @@ NodeList* Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Path
 
     //shh no problem here comrade
       
-        return nullptr;
+
     }
 
 
 
-NodeList* Pathing_Walker::buildPath(Pathing_node * start, Pathing_node * end)
+NodeList Pathing_Walker::buildPath(Pathing_node * start, Pathing_node * end)
 {
     Pathing_node* current = end;
-    NodeList* finalPath;
+
+    NodeList finalPath;
     bool startFound = false;
     while (!startFound)
     {
         if (current == start)
         {
-            startFound == true;
+            startFound = true;
         }
 
-        finalPath->push_back(current);
-        current->m_previous = nullptr;
+        finalPath.push_back(current);
+       // current->m_previous = nullptr;
         current = current->m_previous;
 
     }
@@ -150,7 +165,7 @@ NodeList* Pathing_Walker::buildPath(Pathing_node * start, Pathing_node * end)
     }
    
     
-    return nullptr;
+    return finalPath;
 }
 
 

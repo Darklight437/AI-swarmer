@@ -15,11 +15,11 @@ public:
     std::list<Pathing_edge*> allEdges;
     //built from wikipedia's psuedocode mostly
     //returns a pointer to the first node in the list that is linked to the end node through the best possible path
-    NodeList* Astar(NodeList, Pathing_node* startNode, Pathing_node* targetNode);
+    NodeList Astar(NodeList, Pathing_node* startNode, Pathing_node* targetNode);
 
     //tracks back through the connected nodes and evaluates the cheapest path
     //mostly just in use to simplify code in a*
-    NodeList* buildPath(Pathing_node* start, Pathing_node* end);
+    NodeList buildPath(Pathing_node* start, Pathing_node* end);
 
     //return the lowest Fscore
     Pathing_node* bestScore(NodeList openList);
