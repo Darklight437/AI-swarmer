@@ -15,6 +15,7 @@ public:
   void setPosition(sf::Vector2f position);
   void setPosition(float x, float y);
   void setRotation(float r);
+  void steer(sf::Vector2f target);
 
   //occur every frame updating the transform if it has ben changed etc
   void update();
@@ -22,6 +23,7 @@ public:
   float findDistFromMe(sf::Vector2f target);
   sf::Sprite m_sprite;
 protected:
+    Agent* myAgent;
     sf::Texture m_texture;
     sf::Vector2f m_velocity;
     sf::Vector2f m_acceleration;

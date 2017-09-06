@@ -72,11 +72,16 @@ NodeList Pathing_Walker::Astar(NodeList allNodes, Pathing_node* startNode, Pathi
                 //ignore neighbour as already evaluated
                 continue;
             }
+            //if the node is a wall dont check it
+            if (!current->isWalkable)
+            {
+                continue;
+            }
 
             //node is not in the closedSet
             //throw it in the list of potential paths if it isn't already
 
-            //something not working as intended
+            
             //if node NOT in openset
             if (std::find(openSet.begin(), openSet.end(), neighbour->otherNode(current)) != openSet.end())
             {
@@ -201,16 +206,11 @@ Pathing_node* Pathing_Walker::bestScore(NodeList openList)
 float Pathing_Walker::distBetween(Pathing_node * currNode, Pathing_node * targetNode)
 {
     return (magnitude(currNode->getPos() - targetNode->getPos()));
-    //float tempX = 0;
-    //float tempY = 0;
-    //float squaredDist = 0;
-    //tempX = currNode->getPos().x;
-    //tempX *= tempX;
-    //tempY = currNode->getPos().y;
-    //tempY *= tempY;
-    //squaredDist = tempX + tempY;
-    //squaredDist = sqrtf(squaredDist);
-    //return squaredDist;
+}
+
+float Pathing_Walker::distBetween(sf::Vector2f thisPoint, sf::Vector2f otherPoint)
+{
+    return magnitude(thisPoint - otherPoint);
 }
 
 void Pathing_Walker::generateNodes()
@@ -254,19 +254,23 @@ void Pathing_Walker::generateSingleNode()
 
 
 
-void Pathing_Walker::movenodes()
+Pathing_node* Pathing_Walker::clickNode(sf::Window currentWindow)
 {
     std::list<Pathing_node*>::iterator iter;
-    float searchRadiusSquared = 10000;
+    float searchRadiusSquared = 400;
+    sf::Vector2f mousepos;
+    mousepos.x = sf::Mouse::getPosition(currentWindow).x;
+    mousepos.y = sf::Mouse::getPosition(currentWindow).y;
         for (iter = allNodes.begin(); iter != allNodes.end(); iter++)
         {
-            float VectToTarget = (((*iter)->getPos().x - sf::Mouse::getPosition().x) + ((*iter)->getPos().y - sf::Mouse::getPosition().y));
-            if ( VectToTarget < searchRadiusSquared)
+            float vectToTarget = distBetween((*iter)->circle.getPosition(), mousepos);
+            if (vectToTarget < searchRadiusSquared)
             {
-                //child the node to the mouse for movement
+                return (*iter);
             }
+
         }
-    
+        return nullptr;
 }
 
 

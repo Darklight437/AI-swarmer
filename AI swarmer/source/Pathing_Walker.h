@@ -26,6 +26,7 @@ public:
 
     //get the sistance between two nodes
     float distBetween(Pathing_node* currNode, Pathing_node* targetNode);
+    float distBetween(sf::Vector2f thisPoint, sf::Vector2f otherPoint);
 
     //generates a default node block
     void generateNodes();
@@ -33,8 +34,8 @@ public:
 
     void generateSingleNode();
 
-
-    void movenodes();
+    //returns a node if it is clicked on
+    Pathing_node* clickNode(sf::Window currentWindow);
 
 
     void drawNodes(sf::RenderWindow* render);

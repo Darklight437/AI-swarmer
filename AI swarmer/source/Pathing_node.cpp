@@ -10,6 +10,7 @@ Pathing_node::Pathing_node()
     circle.setOutlineThickness(3);
     circle.setFillColor(sf::Color(0, 0, 0));
     circle.setOutlineColor(sf::Color(255, 255, 255));
+    
     m_previous = nullptr;
     
 

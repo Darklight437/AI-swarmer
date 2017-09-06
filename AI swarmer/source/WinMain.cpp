@@ -33,8 +33,46 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
         while (window.pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
-                window.close();   
+            {
+                window.close();
+            }
+                    
+            if ((event.type == sf::Event::MouseButtonPressed))
+            {
+                Pathing_node* tempnode = m_NodeManager->clickNode(window);
+                if (tempnode)
+                {
+                    if (tempnode->isWalkable)
+                    {
+                        tempnode->isWalkable = false;
+                        tempnode->circle.setOutlineColor(sf::Color(255, 0, 0));
+                    }
+                    else
+                    {
+                        tempnode->isWalkable = true;
+                        tempnode->circle.setOutlineColor(sf::Color(255, 255, 255));
+                    }                    
+                }
+            }
+
+            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Space)
+            {
+
+                //regenerate the path
+                path = m_NodeManager->Astar(m_NodeManager->allNodes, m_NodeManager->allNodes.front(), m_NodeManager->allNodes.back());
+                ((master*)miniship)->setPath(path);
+            }
+
+
         }
+
+
+        
+        
+        
+        
+            
+        
         
         
         //#######################################

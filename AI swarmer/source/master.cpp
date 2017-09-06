@@ -10,6 +10,7 @@ void master::loadSprite()
     m_texture.loadFromFile((getExecutableFolder() + "/sprites/rocket-drone.png"));
     m_texture.setSmooth(false);
     m_sprite.setTexture(m_texture);
+    m_sprite.setOrigin(sf::Vector2f(m_sprite.getGlobalBounds().width / 2, m_sprite.getGlobalBounds().height / 2));
 }
 
 master::master()
@@ -27,17 +28,7 @@ master::~master()
     delete myAgent;
 }
 //seeks a dingle point
-void master::steer(sf::Vector2f target)
-{
-    sf::Vector2f steering;
-    //returns a vector2f that is the total motion force on the object
-  steering = myAgent->getSteeringForce(m_sprite.getPosition(), target);
-  //how to actually move towards this position pl0x
-  m_acceleration = steering;
-  
-  setRotation(angleOfVect(steering));
 
-}
 //seeks a full path
 void master::setPath(NodeList newPath)
 {
