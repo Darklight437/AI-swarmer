@@ -23,6 +23,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
     m_NodeManager->generateNodes();
     //sets the path for the walker to move from the top left to the top right
     NodeList path = m_NodeManager->Astar(m_NodeManager->allNodes, m_NodeManager->allNodes.front(), m_NodeManager->allNodes.back());
+    ((master*)miniship)->setPath(path);
     float fgc = 65;
 
     while (window.isOpen())
@@ -48,7 +49,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
 
         //put a* path in the arguments for steer
         //or do some sort of walker function that checks the position of miniship and feeds it the current seek target
-        ((master*)miniship)->seekPath(path);
+        ((master*)miniship)->seekPath();
         miniship->update();
         
         m_NodeManager->drawNodes(windowPtr);

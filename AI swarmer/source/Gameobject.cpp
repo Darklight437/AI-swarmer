@@ -41,13 +41,17 @@ Gameobject::~Gameobject()
 
  void Gameobject::setPosition(sf::Vector2f position)
  {
-     m_velocity = position;
+     m_sprite.setPosition(position);
  }
 
  void Gameobject::setPosition(float x, float y)
  {
-     m_velocity.x = x;
-     m_velocity.y = y;
+     m_sprite.setPosition(x, y);
+ }
+
+ void Gameobject::setRotation(float r)
+ {
+     m_sprite.setRotation(r);
  }
 
 

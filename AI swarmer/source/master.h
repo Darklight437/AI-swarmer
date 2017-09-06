@@ -12,11 +12,13 @@ public:
     master();
     ~master();
     void steer(sf::Vector2f target);
-    void seekPath(NodeList firstElement);
+    void setPath(NodeList newPath);
+    void seekPath();
 
 private:
     Agent* myAgent;
-    NodeList::iterator It;
-    bool movingToPath = true;
+    NodeList path;
+    Pathing_node* currTarget;
+    bool following = false;
 };
 

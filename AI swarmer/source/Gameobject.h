@@ -14,8 +14,11 @@ public:
   static std::string getExecutableFolder();
   void setPosition(sf::Vector2f position);
   void setPosition(float x, float y);
+  void setRotation(float r);
+
   //occur every frame updating the transform if it has ben changed etc
   void update();
+
   float findDistFromMe(sf::Vector2f target);
   sf::Sprite m_sprite;
 protected:
