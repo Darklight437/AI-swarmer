@@ -7,7 +7,7 @@
 
 void master::loadSprite()
 {
-    m_texture.loadFromFile((getExecutableFolder() + "/sprites/rocket-drone.png").c_str());
+    m_texture.loadFromFile((getExecutableFolder() + "/sprites/rocket-drone.png"));
     m_texture.setSmooth(false);
     m_sprite.setTexture(m_texture);
 }
@@ -55,7 +55,7 @@ void master::seekPath()
     {
         steer(currTarget->getPos());
 
-        if (findDistFromMe(currTarget->getPos()) < 30)
+        if (findDistFromMe(currTarget->getPos()) < 10)
         {
             if (currTarget == path.back())
             {

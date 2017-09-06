@@ -44,14 +44,14 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)\bin\</OutDir>
-    <IntDir>$(SolutionDir)\build\$(Configuration)\</IntDir>
+    <OutDir>$(ProjectDir)\bin\</OutDir>
+    <IntDir>$(ProjectDirDir)\build\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_DEBUG</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)\bin\</OutDir>
-    <IntDir>$(SolutionDir)\build\$(Configuration)\</IntDir>
+    <OutDir>$(ProjectDir)\bin\</OutDir>
+    <IntDir>$(ProjectDirDir)\build\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -75,8 +75,12 @@
     <PostBuildEvent>
       <Command>
       </Command>
-      <Message>broken</Message>
+      <Message>
+      </Message>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>xcopy ".\exe_dependancies" ".\bin" /e /y /i /r</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -104,8 +108,12 @@
     <PostBuildEvent>
       <Command>
       </Command>
-      <Message>broken</Message>
+      <Message>
+      </Message>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>xcopy ".\exe_dependancies" ".\bin" /e /y /i /r</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="source\Agent.cpp" />
