@@ -9,10 +9,12 @@ public:
     ~Swarmer();
 
     void loadSprite();
-    void getNeighbours(std::list<Swarmer*>neighbours);
+    void updateNeighbours(std::list<Swarmer*>neighbours);
 
 
 private:
     std::list<Swarmer*> m_neighbours;
+    Agent myAgent;
+    
 };
 

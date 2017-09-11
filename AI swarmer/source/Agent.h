@@ -17,10 +17,11 @@ public:
     
 
     Behavior* seekBehavior = new Seek;
-    Behavior* flockBehavior = new Flock;
+    Behavior* FlockBehavior = new Flock;
     
     sf::Vector2f steeringForce;
     bool seek = false;
     bool flock = false;
+    std::list<Swarmer*> flockingNeighbours;
 };
 

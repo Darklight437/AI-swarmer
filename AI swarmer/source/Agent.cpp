@@ -12,7 +12,7 @@ Agent::Agent()
 Agent::~Agent()
 {
     delete seekBehavior;
-    delete flockBehavior;
+    delete FlockBehavior;
 }
 
 sf::Vector2f Agent::getSteeringForce(sf::Vector2f myPosition, sf::Vector2f targetPosition)
@@ -27,7 +27,7 @@ sf::Vector2f Agent::getSteeringForce(sf::Vector2f myPosition, sf::Vector2f targe
     }
     if (flock)
     {
-  //      steeringForce =((flock*)flockBehavior)->calculateForce(myPosition, targetPosition))
+        steeringForce = ((Flock*)FlockBehavior)->calculateForce(myPosition, targetPosition);
     }
    
     
