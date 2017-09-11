@@ -4,6 +4,7 @@
 
 Swarmer::Swarmer()
 {
+    loadSprite();
 }
 
 
@@ -11,12 +12,23 @@ Swarmer::~Swarmer()
 {
 }
 
-void Swarmer::flock()
+void Swarmer::loadSprite()
 {
-    //get current position
-    //check for more of me nearby in a list of me's
-    //add their velocity to mine
-    //
+    m_texture.loadFromFile((getExecutableFolder() + "/sprites/Triangle.png"));
+    m_texture.setSmooth(false);
+    m_sprite.setTexture(m_texture);
+    m_sprite.setOrigin(sf::Vector2f(m_sprite.getGlobalBounds().width / 2, m_sprite.getGlobalBounds().height / 2));
+}
+
+void Swarmer::getNeighbours(std::list<Swarmer*> neighbours)
+{
+
+    m_neighbours = neighbours;
+    //gets the nearby boids for this frame
+    //puts em in a local list
+    
 
 }
+
+
 
