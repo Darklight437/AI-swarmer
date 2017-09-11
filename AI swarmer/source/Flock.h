@@ -1,7 +1,7 @@
 #pragma once
 #include "Behavior.h"
 #include <list>
-#include "Swarmer.h"
+
 class Flock :
     public Behavior
 {
