@@ -22,3 +22,9 @@ sf::Vector2f Flock::calculateForce(sf::Vector2f myPosition, sf::Vector2f targetP
 
     return steeringForce;
 }
+
+sf::Vector2f Flock::separation()
+{
+
+    return sf::Vector2f();
+}
