@@ -6,5 +6,8 @@ class Swarmer :
 public:
     Swarmer();
     ~Swarmer();
+
+
+    void flock();
 };
 

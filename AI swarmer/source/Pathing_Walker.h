@@ -35,7 +35,7 @@ public:
     void generateSingleNode();
 
     //returns a node if it is clicked on
-    Pathing_node* clickNode(sf::Window currentWindow);
+    Pathing_node* clickNode(sf::Window &currentWindow);
 
 
     void drawNodes(sf::RenderWindow* render);

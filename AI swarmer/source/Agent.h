@@ -3,6 +3,7 @@
 #include <vector>
 #include "Behavior.h"
 #include "Seek.h"
+#include "Flock.h"
 
 
 class Agent
@@ -16,8 +17,10 @@ public:
     
 
     Behavior* seekBehavior = new Seek;
-    
+    Behavior* flockBehavior = new Flock;
     
     sf::Vector2f steeringForce;
+    bool seek = false;
+    bool flock = false;
 };
 

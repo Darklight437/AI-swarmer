@@ -254,13 +254,12 @@ void Pathing_Walker::generateSingleNode()
 
 
 
-Pathing_node* Pathing_Walker::clickNode(sf::Window currentWindow)
+Pathing_node* Pathing_Walker::clickNode(sf::Window &currentWindow)
 {
     std::list<Pathing_node*>::iterator iter;
-    float searchRadiusSquared = 400;
-    sf::Vector2f mousepos;
-    mousepos.x = sf::Mouse::getPosition(currentWindow).x;
-    mousepos.y = sf::Mouse::getPosition(currentWindow).y;
+    float searchRadiusSquared = 20;
+    sf::Vector2f mousepos = (sf::Vector2f)sf::Mouse::getPosition(currentWindow);
+    
         for (iter = allNodes.begin(); iter != allNodes.end(); iter++)
         {
             float vectToTarget = distBetween((*iter)->circle.getPosition(), mousepos);

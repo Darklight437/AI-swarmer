@@ -63,6 +63,9 @@
     <ClCompile Include="source\deltaClock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\Flock.cpp">
+      <Filter>Source Files\Gameobjects &amp; variants\Behaviors</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Gameobject.h">
@@ -100,6 +103,9 @@
     </ClInclude>
     <ClInclude Include="source\deltaClock.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Flock.h">
+      <Filter>Source Files\Gameobjects &amp; variants\Behaviors</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

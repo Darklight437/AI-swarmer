@@ -18,7 +18,7 @@ master::master()
    
    loadSprite();
    myAgent = new Agent;
-   
+   myAgent->seek = true;
    
 }
 
