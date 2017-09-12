@@ -66,6 +66,14 @@ Gameobject::~Gameobject()
 
  }
 
+ void Gameobject::flock()
+ {
+     //move in a random direction
+     //then search your locality & add all available nearby swarmers to the list
+
+
+ }
+
  sf::Vector2f Gameobject::getVelocity()
  {
      return m_velocity;

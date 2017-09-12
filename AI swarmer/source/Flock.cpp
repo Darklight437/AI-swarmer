@@ -23,6 +23,7 @@ sf::Vector2f Flock::calculateForce(sf::Vector2f myPosition, std::list<Gameobject
     sf::Vector2f separationF;
     sf::Vector2f alignF;
     sf::Vector2f cohereF;
+
     for each (Gameobject* neighbour in neighbours)
     {
        separationF += separation(myPosition, neighbour->m_sprite.getPosition())  ;
@@ -36,7 +37,10 @@ sf::Vector2f Flock::calculateForce(sf::Vector2f myPosition, std::list<Gameobject
     cohereF /= sizeOfList;
 
     //minus velocity somehow
+    //nah just do that in a layer above
+    //hopefully
 
+    steeringF = (separationF * separateWeight) + (alignF * alignWeight) + (cohereF * cohesionWeight);
 
     return steeringF;
 }
