@@ -68,10 +68,13 @@ Gameobject::~Gameobject()
 
  void Gameobject::flock()
  {
+     sf::Vector2f steering;
+
+     //steering = myAgent->getFlockForce();
      //move in a random direction
      //then search your locality & add all available nearby swarmers to the list
 
-
+     
  }
 
  sf::Vector2f Gameobject::getVelocity()

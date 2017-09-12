@@ -5,7 +5,7 @@
 Swarmer::Swarmer()
 {
     loadSprite();
-    myAgent.flock = true;
+
 }
 
 

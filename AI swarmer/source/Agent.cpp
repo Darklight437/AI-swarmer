@@ -27,3 +27,9 @@ sf::Vector2f Agent::getSteeringForce(sf::Vector2f myPosition, sf::Vector2f targe
     
     return steeringForce;
 }
+
+sf::Vector2f Agent::getFlockForce()
+{
+
+    return sf::Vector2f();
+}
