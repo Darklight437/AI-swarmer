@@ -66,6 +66,11 @@ Gameobject::~Gameobject()
 
  }
 
+ sf::Vector2f Gameobject::getVelocity()
+ {
+     return m_velocity;
+ }
+
 
  void Gameobject::update()
  {

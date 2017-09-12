@@ -22,6 +22,6 @@ public:
     sf::Vector2f steeringForce;
     bool seek = false;
     bool flock = false;
-    std::list<Swarmer*> flockingNeighbours;
+    std::list<Gameobject*> flockingNeighbours;
 };
 
