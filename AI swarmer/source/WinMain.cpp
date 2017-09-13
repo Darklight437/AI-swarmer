@@ -18,6 +18,8 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
 
     //make gameobjects
     Gameobject* miniship = new master();
+    //make a list of swarmers
+    std::list<Gameobject*> swarmers;
     
 
     m_NodeManager->generateNodes();
