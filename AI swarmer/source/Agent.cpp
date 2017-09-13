@@ -28,8 +28,11 @@ sf::Vector2f Agent::getSteeringForce(sf::Vector2f myPosition, sf::Vector2f targe
     return steeringForce;
 }
 
-sf::Vector2f Agent::getFlockForce()
+sf::Vector2f Agent::getFlockForce(Gameobject* thisObject)
 {
 
-    return sf::Vector2f();
+    sf::Vector2f flockForce;
+
+    flockForce = ((Flock*)FlockBehavior)->calculateForce(thisObject, flockingNeighbours);
+    return flockForce;
 }

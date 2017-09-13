@@ -30,6 +30,7 @@ sf::Vector2f Flock::calculateForce(Gameobject* thisObject, std::list<Gameobject*
        alignF += align(neighbour->getVelocity());
        cohereF += cohere(thisObject->m_sprite.getPosition(), neighbour->m_sprite.getPosition());
     }
+
     float sizeOfList = neighbours.size();
 
     separationF /= sizeOfList;

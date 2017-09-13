@@ -66,15 +66,17 @@ Gameobject::~Gameobject()
 
  }
 
- void Gameobject::flock()
+ void Gameobject::flock(sf::Vector2f leader)
  {
      sf::Vector2f steering;
 
-     //steering = myAgent->getFlockForce();
-     //move in a random direction
+
+     steering = myAgent->getSteeringForce(m_sprite.getPosition(), leader);
+     steering = myAgent->getFlockForce(this);
+
      //then search your locality & add all available nearby swarmers to the list
 
-     
+     setRotation(angleOfVect(steering));
  }
 
  sf::Vector2f Gameobject::getVelocity()

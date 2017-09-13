@@ -16,7 +16,7 @@ public:
   void setPosition(float x, float y);
   void setRotation(float r);
   void steer(sf::Vector2f target);
-  void flock();
+  void flock(sf::Vector2f leader);
   sf::Vector2f getVelocity();
   //occur every frame updating the transform if it has ben changed etc
   void update();

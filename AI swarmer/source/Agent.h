@@ -13,7 +13,7 @@ public:
     ~Agent();
     
     sf::Vector2f getSteeringForce(sf::Vector2f myPosition, sf::Vector2f targetPosition);
-    sf::Vector2f getFlockForce();
+    sf::Vector2f getFlockForce(Gameobject* thisObject);
     
 
     Behavior* seekBehavior = new Seek;
