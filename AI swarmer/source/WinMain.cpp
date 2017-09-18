@@ -30,6 +30,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
     {
         Gameobject* newSwarmer = new Swarmer();
         swarmers.push_back(newSwarmer);
+
     }
 
     m_NodeManager->generateNodes();
