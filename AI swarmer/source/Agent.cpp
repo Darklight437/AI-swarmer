@@ -21,6 +21,8 @@ sf::Vector2f Agent::getSteeringForce(sf::Vector2f myPosition, sf::Vector2f targe
     //get each behavior just seek for now
     //add all their steeringforce values together to get this frame's force
 
+    Seek * DS = ((Seek*)seekBehavior);
+    DS->calculateForce(myPosition, targetPosition);
     //do an if test on this
         steeringForce = ((Seek*)seekBehavior)->calculateForce(myPosition, targetPosition);
 

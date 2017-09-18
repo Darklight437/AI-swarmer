@@ -1,6 +1,7 @@
 
 #include "Gameobject.h"
 #include "master.h"
+#include "Swarmer.h"
 #include "Pathing_Walker.h"
 #include <Windows.h>
 #include <SFML\Graphics.hpp>
@@ -19,10 +20,17 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
     //#################################################################################################################
 
     //make gameobjects
+
+    //pathfinding master object
     Gameobject* miniship = new master();
-    //make a list of swarmers
+    // a list of swarmer objects as standard gameobjects
     std::list<Gameobject*> swarmers;
-    
+
+    for (int i = 0; i < 10; i++)
+    {
+        Gameobject* newSwarmer = new Swarmer();
+        swarmers.push_back(newSwarmer);
+    }
 
     m_NodeManager->generateNodes();
     //sets the path for the walker to move from the top left to the top right
@@ -38,6 +46,12 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
 
     while (window.isOpen())
     {
+        //#################################################################################################################
+        //#################################################################################################################
+        //EVENT MANAGER
+        //#################################################################################################################
+        //#################################################################################################################
+
         CLOCK->restart();
         sf::Event event;
         while (window.pollEvent(event))
@@ -73,8 +87,13 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
                 ((master*)miniship)->setPath(path);
             }
 
+            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::LControl)
+            {
+                //do something with seekers here if needs be
 
-        }
+            }
+
+        }//end while
 
 
         
@@ -86,7 +105,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
         
     //#################################################################################################################
     //#################################################################################################################
-    //rendering segment
+    //movement section
     //#################################################################################################################
     //#################################################################################################################
 
@@ -100,10 +119,32 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
         ((master*)miniship)->seekPath();
         miniship->update();
         
+        //get each of the "minions" and draw and steer them
+        for each (Gameobject* minion in swarmers)
+        {
+            //minion->flock(miniship->m_sprite.getPosition());
+            minion->flock(miniship->m_sprite.getPosition());
+            minion->update();
+            
+        }
+        
+
+
+
+        //#################################################################################################################
+        //#################################################################################################################
+        //rendering
+        //#################################################################################################################
+        //#################################################################################################################
+
         m_NodeManager->drawNodes(windowPtr);
 
         window.draw(miniship->m_sprite);
 
+        for each (Gameobject* minion in swarmers)
+        {
+            window.draw(minion->m_sprite);
+        }
         
 
 
