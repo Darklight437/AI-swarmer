@@ -26,11 +26,19 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
     // a list of swarmer objects as standard gameobjects
     std::list<Gameobject*> swarmers;
 
+    //#################################################################################################################
+    sf::Vector2f middle;
+    middle.x = 500;
+    middle.y = 500;
+    //#################################################################################################################
+    //make all the swarm objects
     for (int i = 0; i < 10; i++)
     {
+        
         Gameobject* newSwarmer = new Swarmer();
         swarmers.push_back(newSwarmer);
-
+        //set the swarmer to a position
+        newSwarmer->setPosition(middle);
     }
 
     m_NodeManager->generateNodes();
@@ -123,7 +131,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
         //get each of the "minions" and draw and steer them
         for each (Gameobject* minion in swarmers)
         {
-            //minion->flock(miniship->m_sprite.getPosition());
+            
             minion->flock(miniship->m_sprite.getPosition());
             minion->update();
             
