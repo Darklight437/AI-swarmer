@@ -18,7 +18,7 @@ public:
     sf::Vector2f separation(sf::Vector2f myPosition, sf::Vector2f neighbourPos);
     sf::Vector2f align(sf::Vector2f neighbourPos);
     sf::Vector2f cohere(sf::Vector2f myPosition, sf::Vector2f neighbourPos);
-
+    std::list<Gameobject*> getNeighbours(Gameobject* thisSwarmer);
 private:
     float cohesionWeight = 1;
     float alignWeight = 1;

@@ -38,3 +38,23 @@ sf::Vector2f Agent::getFlockForce(Gameobject* thisObject)
     flockForce = ((Flock*)FlockBehavior)->calculateForce(thisObject, flockingNeighbours);
     return flockForce;
 }
+
+void Agent::addNeighbour(Gameobject * thisSwarmer)
+{
+    if (std::find(flockingNeighbours.begin(), flockingNeighbours.end(), thisSwarmer) == flockingNeighbours.end())
+    {
+        flockingNeighbours.push_back(thisSwarmer);
+    }
+}
+
+void Agent::removeNeighbour(Gameobject * thisSwarmer)
+{
+   
+    if (std::find(flockingNeighbours.begin(), flockingNeighbours.end(), thisSwarmer) != flockingNeighbours.end())
+    {
+        flockingNeighbours.remove(thisSwarmer);
+    }
+
+}
+
+

@@ -14,10 +14,12 @@ public:
     
     sf::Vector2f getSteeringForce(sf::Vector2f myPosition, sf::Vector2f targetPosition);
     sf::Vector2f getFlockForce(Gameobject* thisObject);
-    
+    void addNeighbour(Gameobject* thisSwarmer);
+    void removeNeighbour(Gameobject* thisSwarmer);
 
     Behavior* seekBehavior = new Seek;
     Behavior* FlockBehavior = new Flock;
+    
 private:
     sf::Vector2f steeringForce;
     std::list<Gameobject*> flockingNeighbours;

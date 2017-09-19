@@ -6,7 +6,7 @@
 
 Gameobject::Gameobject()
 {
-    
+    myAgent = new Agent;
 }
 
 Gameobject::Gameobject(std::string spriteFileName)
@@ -23,6 +23,7 @@ Gameobject::Gameobject(std::string spriteFileName)
 
 Gameobject::~Gameobject()
 {
+    delete myAgent;
 }
 
 
@@ -82,6 +83,23 @@ Gameobject::~Gameobject()
  sf::Vector2f Gameobject::getVelocity()
  {
      return m_velocity;
+ }
+
+ void Gameobject::getNeighbours(std::list<Gameobject*> swarmerList)
+ {
+     for each (Gameobject* Swarmer in swarmerList)
+     {
+         if (findDistFromMe(Swarmer->m_sprite.getPosition()) < 50)
+         {
+             myAgent->addNeighbour(Swarmer);
+         }
+         else
+         {
+             myAgent->removeNeighbour(Swarmer);
+         }
+         
+     }
+
  }
 
 

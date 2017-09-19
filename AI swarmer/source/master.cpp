@@ -17,7 +17,7 @@ master::master()
 {
    
    loadSprite();
-   myAgent = new Agent;
+
 
    
 }
@@ -25,7 +25,7 @@ master::master()
 
 master::~master()
 {
-    delete myAgent;
+
 }
 //seeks a dingle point
 

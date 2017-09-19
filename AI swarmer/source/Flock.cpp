@@ -69,3 +69,9 @@ sf::Vector2f Flock::cohere(sf::Vector2f myPosition, sf::Vector2f neighbourPos)
     sf::Vector2f cohesionForce = neighbourPos - myPosition;
     return cohesionForce;
 }
+
+std::list<Gameobject*> Flock::getNeighbours(Gameobject* thisSwarmer)
+{
+
+    return std::list<Gameobject*>();
+}

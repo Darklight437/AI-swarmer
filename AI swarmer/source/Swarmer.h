@@ -14,7 +14,7 @@ public:
 
 private:
     std::list<Swarmer*> m_neighbours;
-    Agent myAgent;
+    //Agent myAgent;
     
 };
 

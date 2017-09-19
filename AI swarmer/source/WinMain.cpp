@@ -31,7 +31,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
     middle.x = 500;
     middle.y = 500;
     //#################################################################################################################
-    //make all the swarm objects
+    //make all the swarm objects start in the middle 
     for (int i = 0; i < 10; i++)
     {
         
@@ -152,6 +152,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
 
         for each (Gameobject* minion in swarmers)
         {
+        
             window.draw(minion->m_sprite);
         }
         
