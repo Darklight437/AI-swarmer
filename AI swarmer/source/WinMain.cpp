@@ -31,6 +31,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
     middle.x = 500;
     middle.y = 500;
     //#################################################################################################################
+
     //make all the swarm objects start in the middle 
     for (int i = 0; i < 10; i++)
     {
@@ -38,6 +39,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
         Gameobject* newSwarmer = new Swarmer();
         swarmers.push_back(newSwarmer);
         //set the swarmer to a position
+        middle.x += i;
         newSwarmer->setPosition(middle);
     }
 
@@ -45,7 +47,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
     //sets the path for the walker to move from the top left to the top right
     NodeList path = m_NodeManager->Astar(m_NodeManager->allNodes, m_NodeManager->allNodes.front(), m_NodeManager->allNodes.back());
     ((master*)miniship)->setPath(path);
-    float fgc = 65;
+
     
     //#################################################################################################################
     //#################################################################################################################
