@@ -18,7 +18,10 @@ public:
   void steer(sf::Vector2f target);
   void flock(sf::Vector2f leader);
   sf::Vector2f getVelocity();
+
+  //assigning neighbours for flocking
   void getNeighbours(std::list<Gameobject*> swarmerList);
+
   //occur every frame updating the transform if it has ben changed etc
   void update();
 

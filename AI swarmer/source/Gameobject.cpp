@@ -92,14 +92,14 @@ Gameobject::~Gameobject()
      {
          if (find2DistFromMe(Swarmer->m_sprite.getPosition()) < 360000)
          {
-             myAgent->addAlign(Swarmer);
+             //myAgent->addAlign(Swarmer);
+         }
          else
          {
-             myAgent->removeNeighbour(Swarmer);
+             //myAgent->removeNeighbour(Swarmer);
          }
-         
-     }
-
+ 
+     
  }
 
 
