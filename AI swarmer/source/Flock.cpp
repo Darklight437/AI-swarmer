@@ -1,6 +1,7 @@
 #include "Flock.h"
 #include "Gameobject.h"
 #include "Vmath.h"
+#include "Agent.h"
 
 Flock::Flock()
 {
@@ -17,7 +18,7 @@ sf::Vector2f Flock::calculateForce(sf::Vector2f myPosition, sf::Vector2f targetP
     return sf::Vector2f();
 }
 
-sf::Vector2f Flock::calculateForce(Gameobject* thisObject, std::list<Gameobject*>neighbours, sf::Vector2f targetPos)
+sf::Vector2f Flock::calculateForce(Gameobject* thisObject, Agent::FlockingNeighbours neighbourhood, sf::Vector2f targetPos)
 {
     sf::Vector2f steeringF;
     sf::Vector2f separationF;
@@ -36,20 +37,31 @@ sf::Vector2f Flock::calculateForce(Gameobject* thisObject, std::list<Gameobject*
 
     //#######################################################################################################
     //#######################################################################################################
-    for each (Gameobject* neighbour in neighbours)
+    
+    for each (Gameobject* neighbour in neighbourhood.alignNeighbours)
     {
-       separationF += separation(thisObject->m_sprite.getPosition(), neighbour->m_sprite.getPosition())  ;
+      
        alignF += align(neighbour->getVelocity());
-       cohereF += cohere(thisObject->m_sprite.getPosition(), neighbour->m_sprite.getPosition());
+       
+    }
+    for each (Gameobject* neighbour in neighbourhood.cohereNeighbours)
+    {
+
+    }
+    for each (Gameobject* neighbour in neighbourhood.separateNeighbours)
+    {
+
     }
 
+    //3 of these
+    
+    float separationSize = neighbourhood.separateNeighbours.size();
+    float alignSize = neighbourhood.alignNeighbours.size();
+    float cohereSize= neighbourhood.cohereNeighbours.size();
 
-    float sizeOfList = neighbours.size();
-
-
-    separationF /= sizeOfList;
-    alignF /= sizeOfList;
-    cohereF /= sizeOfList;
+    separationF /= separationSize;
+    alignF /= alignSize;
+    cohereF /= cohereSize;
 
 
     steeringF += ((separationF - thisObject->getVelocity()) * separateWeight)

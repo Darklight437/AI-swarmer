@@ -22,15 +22,17 @@ public:
     Behavior* seekBehavior = new Seek;
     Behavior* FlockBehavior = new Flock;
     
-private:
-    float movementSpeed;
-    sf::Vector2f steeringForce;
-    
     struct FlockingNeighbours
     {
         std::list<Gameobject*> cohereNeighbours;
         std::list<Gameobject*> separateNeighbours;
         std::list<Gameobject*> alignNeighbours;
-    }Neighbours;
+    };
+
+private:
+    float movementSpeed;
+    sf::Vector2f steeringForce;
+    
+    FlockingNeighbours Neighbours;
 };
 
