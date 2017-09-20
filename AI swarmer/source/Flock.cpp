@@ -28,10 +28,11 @@ sf::Vector2f Flock::calculateForce(Gameobject* thisObject, std::list<Gameobject*
     //seek stuff
 
     steeringF = targetPos - thisObject->m_sprite.getPosition();
-
-    //maybe normalise and multiply by speed after everything else
-    //steeringF = normalise(steeringF);
-    //steeringF *= /*top speed*/; dunno about this one
+    steeringF = normalise(steeringF);
+    steeringF *= 10.0f;
+    
+    
+   
 
     //#######################################################################################################
     //#######################################################################################################
@@ -55,7 +56,7 @@ sf::Vector2f Flock::calculateForce(Gameobject* thisObject, std::list<Gameobject*
               + ((alignF - thisObject->getVelocity()) * alignWeight)
               + ((cohereF - thisObject->getVelocity()) * cohesionWeight);
 
-
+    steeringF *= 10.0f;
     return steeringF;
 }
 
