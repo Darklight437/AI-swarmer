@@ -5,7 +5,7 @@
 Swarmer::Swarmer()
 {
     loadSprite();
-
+    myAgent->setTopSpeed(200);
 }
 
 

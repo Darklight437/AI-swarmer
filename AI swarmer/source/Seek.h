@@ -9,12 +9,12 @@ public:
     Seek();
     ~Seek();
     //Find(sf::Vector2f myPosition);
-    sf::Vector2f calculateForce(sf::Vector2f myPosition, sf::Vector2f targetPosition);
+    sf::Vector2f calculateForce(sf::Vector2f myPosition, sf::Vector2f targetPosition, float speed);
 
 private:
 
     sf::Vector2f steeringForce;
-    float seekspeed = 300;
+    
 
 };
 

@@ -16,13 +16,13 @@ Seek::~Seek()
 //    myPos = myPosition;
 //}
 
-sf::Vector2f Seek::calculateForce(sf::Vector2f myPosition, sf::Vector2f targetPosition)
+sf::Vector2f Seek::calculateForce(sf::Vector2f myPosition, sf::Vector2f targetPosition, float speed)
 {
     
     steeringForce = targetPosition - myPosition;
     
     steeringForce = normalise(steeringForce);
-    steeringForce *= seekspeed;
+    steeringForce *= speed;
 
 
     return steeringForce;
