@@ -73,7 +73,7 @@ Gameobject::~Gameobject()
 
 
      
-     steering = myAgent->getFlockForce(this);
+     steering = myAgent->getFlockForce(this, leader);
 
      //then search your locality & add all available nearby swarmers to the list
 

@@ -35,7 +35,7 @@ sf::Vector2f Agent::getFlockForce(Gameobject* thisObject, sf::Vector2f targetPos
 
     sf::Vector2f flockForce;
 
-    flockForce = ((Flock*)FlockBehavior)->calculateForce(thisObject, flockingNeighbours);
+    flockForce = ((Flock*)FlockBehavior)->calculateForce(thisObject, flockingNeighbours, targetPos);
     return flockForce;
 }
 
