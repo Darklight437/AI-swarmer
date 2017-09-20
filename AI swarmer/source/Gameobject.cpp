@@ -88,19 +88,23 @@ Gameobject::~Gameobject()
 
  void Gameobject::getNeighbours(std::list<Gameobject*> swarmerList)
  {
+
      for each (Gameobject* Swarmer in swarmerList)
      {
          if (find2DistFromMe(Swarmer->m_sprite.getPosition()) < 360000)
          {
-             //myAgent->addAlign(Swarmer);
+             myAgent->addAlign(Swarmer);
          }
-         else
+         if (find2DistFromMe(Swarmer->m_sprite.getPosition()) < 90000)
          {
-             //myAgent->removeNeighbour(Swarmer);
+
          }
- 
-     
+
+
+
  }
+
+ 
 
 
  void Gameobject::update()

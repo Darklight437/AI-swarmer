@@ -4,7 +4,7 @@
 
 
 class Gameobject;
-class Agent;
+//class Agent;
 
 class Flock :
     public Behavior

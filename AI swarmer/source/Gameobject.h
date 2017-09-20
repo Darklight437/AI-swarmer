@@ -19,6 +19,7 @@ public:
   void flock(sf::Vector2f leader);
   sf::Vector2f getVelocity();
 
+  //AAAAAAAAAH WHYYYYYYYYYYYY
   //assigning neighbours for flocking
   void getNeighbours(std::list<Gameobject*> swarmerList);
 

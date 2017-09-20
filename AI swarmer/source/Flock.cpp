@@ -1,7 +1,7 @@
 #include "Flock.h"
 #include "Gameobject.h"
 #include "Vmath.h"
-#include "Agent.h"
+
 
 Flock::Flock()
 {
