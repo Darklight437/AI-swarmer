@@ -90,10 +90,9 @@ Gameobject::~Gameobject()
  {
      for each (Gameobject* Swarmer in swarmerList)
      {
-         if (findDistFromMe(Swarmer->m_sprite.getPosition()) < 50)
+         if (find2DistFromMe(Swarmer->m_sprite.getPosition()) < 360000)
          {
-             myAgent->addNeighbour(Swarmer);
-         }
+             myAgent->addAlign(Swarmer);
          else
          {
              myAgent->removeNeighbour(Swarmer);
@@ -128,5 +127,16 @@ Gameobject::~Gameobject()
 
     float distance = sqrt(newX + newY);
     return distance;
+ }
+
+ float Gameobject::find2DistFromMe(sf::Vector2f target)
+ {
+     sf::Vector2f targetVect;
+     targetVect = m_sprite.getPosition() - target;
+
+     float newX = targetVect.x * targetVect.x;
+     float newY = targetVect.y * targetVect.y;
+     float distance = newX + newY;
+     return distance;
  }
 

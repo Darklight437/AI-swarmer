@@ -35,27 +35,26 @@ sf::Vector2f Agent::getFlockForce(Gameobject* thisObject, sf::Vector2f targetPos
 
     sf::Vector2f flockForce;
 
-    flockForce = ((Flock*)FlockBehavior)->calculateForce(thisObject, flockingNeighbours, targetPos);
+    flockForce = ((Flock*)FlockBehavior)->calculateForce(thisObject, Neighbours, targetPos);
     return flockForce;
 }
 
-void Agent::addNeighbour(Gameobject * thisSwarmer)
+void Agent::addAlign(Gameobject * neighbour)
 {
-    if (std::find(flockingNeighbours.begin(), flockingNeighbours.end(), thisSwarmer) == flockingNeighbours.end())
-    {
-        flockingNeighbours.push_back(thisSwarmer);
-    }
+    Neighbours.alignNeighbours.push_back(neighbour);
 }
 
-void Agent::removeNeighbour(Gameobject * thisSwarmer)
+void Agent::addCohere(Gameobject * neighbour)
 {
-   
-    if (std::find(flockingNeighbours.begin(), flockingNeighbours.end(), thisSwarmer) != flockingNeighbours.end())
-    {
-        flockingNeighbours.remove(thisSwarmer);
-    }
-
+    Neighbours.cohereNeighbours.push_back(neighbour);
 }
+
+void Agent::addSeparate(Gameobject * neighbour)
+{
+    Neighbours.separateNeighbours.push_back(neighbour);
+}
+
+
 
 void Agent::setTopSpeed(float speed)
 {

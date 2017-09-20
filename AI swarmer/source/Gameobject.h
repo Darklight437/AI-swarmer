@@ -23,6 +23,7 @@ public:
   void update();
 
   float findDistFromMe(sf::Vector2f target);
+  float find2DistFromMe(sf::Vector2f target);
   sf::Sprite m_sprite;
 protected:
     Agent* myAgent;

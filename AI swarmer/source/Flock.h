@@ -20,8 +20,8 @@ public:
     sf::Vector2f cohere(sf::Vector2f myPosition, sf::Vector2f neighbourPos);
     std::list<Gameobject*> getNeighbours(Gameobject* thisSwarmer);
 private:
-    float cohesionWeight = 0.35f;
-    float alignWeight = 1.0f;
-    float separateWeight = 1.0f;
+    float cohesionWeight = 0.4f;
+    float alignWeight = 0.5f;
+    float separateWeight = 0.9f;
 };
 

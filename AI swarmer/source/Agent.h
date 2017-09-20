@@ -14,8 +14,9 @@ public:
     
     sf::Vector2f getSteeringForce(sf::Vector2f myPosition, sf::Vector2f targetPosition);
     sf::Vector2f getFlockForce(Gameobject* thisObject, sf::Vector2f targetPos);
-    void addNeighbour(Gameobject* thisSwarmer);
-    void removeNeighbour(Gameobject* thisSwarmer);
+    void addAlign(Gameobject* neighbour);
+    void addCohere(Gameobject* neighbour);
+    void addSeparate(Gameobject* neighbour);
     void setTopSpeed(float speed);
 
     Behavior* seekBehavior = new Seek;
@@ -24,6 +25,12 @@ public:
 private:
     float movementSpeed;
     sf::Vector2f steeringForce;
-    std::list<Gameobject*> flockingNeighbours;
+    
+    struct FlockingNeighbours
+    {
+        std::list<Gameobject*> cohereNeighbours;
+        std::list<Gameobject*> separateNeighbours;
+        std::list<Gameobject*> alignNeighbours;
+    }Neighbours;
 };
 
