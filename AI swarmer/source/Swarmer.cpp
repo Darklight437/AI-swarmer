@@ -1,6 +1,6 @@
 #include "Swarmer.h"
 
-
+#include "Agent.h"
 
 Swarmer::Swarmer()
 {
@@ -21,15 +21,7 @@ void Swarmer::loadSprite()
     m_sprite.setOrigin(sf::Vector2f(m_sprite.getGlobalBounds().width / 2, m_sprite.getGlobalBounds().height / 2));
 }
 
-void Swarmer::updateNeighbours(std::list<Swarmer*> neighbours)
-{
 
-    m_neighbours = neighbours;
-    //gets the nearby boids for this frame
-    //puts em in a local list
-    
-
-}
 
 
 

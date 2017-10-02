@@ -1,6 +1,7 @@
 #include "Flock.h"
 #include "Gameobject.h"
 #include "Vmath.h"
+#include "Agent.h"
 
 
 Flock::Flock()
@@ -18,7 +19,7 @@ sf::Vector2f Flock::calculateForce(sf::Vector2f myPosition, sf::Vector2f targetP
     return sf::Vector2f();
 }
 
-sf::Vector2f Flock::calculateForce(Gameobject* thisObject, Agent::FlockingNeighbours neighbourhood, sf::Vector2f targetPos)
+sf::Vector2f Flock::calculateForce(Gameobject* thisObject, FlockingNeighbours neighbourhood, sf::Vector2f targetPos)
 {
     sf::Vector2f steeringF;
     sf::Vector2f separationF;

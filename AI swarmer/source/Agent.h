@@ -6,6 +6,13 @@
 #include "Flock.h"
 
 
+struct FlockingNeighbours
+{
+    std::list<Gameobject*> cohereNeighbours;
+    std::list<Gameobject*> separateNeighbours;
+    std::list<Gameobject*> alignNeighbours;
+};
+
 class Agent
 {
 public:
@@ -22,12 +29,7 @@ public:
     Behavior* seekBehavior = new Seek;
     Behavior* FlockBehavior = new Flock;
     
-    struct FlockingNeighbours
-    {
-        std::list<Gameobject*> cohereNeighbours;
-        std::list<Gameobject*> separateNeighbours;
-        std::list<Gameobject*> alignNeighbours;
-    };
+    
 
 private:
     float movementSpeed;

@@ -3,6 +3,7 @@
 #include "deltaClock.h"
 #include "Vmath.h"
 #include <cmath>
+#include "Agent.h"
 
 Gameobject::Gameobject()
 {
@@ -99,8 +100,9 @@ Gameobject::~Gameobject()
          {
 
          }
+         
 
-
+     }
 
  }
 
@@ -123,7 +125,7 @@ Gameobject::~Gameobject()
 
  float Gameobject::findDistFromMe(sf::Vector2f target)
  {
-     sf::Vector2f targetVect;
+    sf::Vector2f targetVect;
     targetVect = m_sprite.getPosition() - target;
 
     float newX = targetVect.x * targetVect.x;
@@ -140,6 +142,7 @@ Gameobject::~Gameobject()
 
      float newX = targetVect.x * targetVect.x;
      float newY = targetVect.y * targetVect.y;
+
      float distance = newX + newY;
      return distance;
  }

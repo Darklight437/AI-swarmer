@@ -1,8 +1,9 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <string>
-#include "Agent.h"
+#include <list>
 
+class Agent;
 
 class Gameobject
 {
@@ -11,6 +12,8 @@ public:
     Gameobject(std::string spriteFileName);
     virtual ~Gameobject();
     //virtual void loadSprite() = 0;
+
+
   static std::string getExecutableFolder();
   void setPosition(sf::Vector2f position);
   void setPosition(float x, float y);
@@ -19,7 +22,7 @@ public:
   void flock(sf::Vector2f leader);
   sf::Vector2f getVelocity();
 
-  //AAAAAAAAAH WHYYYYYYYYYYYY
+ 
   //assigning neighbours for flocking
   void getNeighbours(std::list<Gameobject*> swarmerList);
 

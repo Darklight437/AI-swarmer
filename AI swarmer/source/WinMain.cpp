@@ -12,7 +12,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
 {
     sf::RenderWindow window(sf::VideoMode(1680, 1050), "Swarmlings");
     sf::RenderWindow* windowPtr = &window;
-    Pathing_Walker* m_NodeManager = new Pathing_Walker;
+    
 //#################################################################################################################
 //#################################################################################################################
 // run startup constructors for the game
@@ -20,7 +20,8 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
 //#################################################################################################################
 
     //make gameobjects
-
+    //manager creates/deletes and links nodes
+    Pathing_Walker* m_NodeManager = new Pathing_Walker;
     //pathfinding master object
     Gameobject* miniship = new master();
     // a list of swarmer objects as standard gameobjects
