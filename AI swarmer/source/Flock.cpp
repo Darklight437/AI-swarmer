@@ -29,7 +29,7 @@ sf::Vector2f Flock::calculateForce(Gameobject* thisObject, FlockingNeighbours ne
     //#######################################################################################################
     //seek stuff
 
-    steeringF = targetPos - thisObject->m_sprite.getPosition();
+    steeringF += targetPos - thisObject->m_sprite.getPosition();
     steeringF = normalise(steeringF);
     steeringF *= 4.0f;
     
@@ -70,8 +70,8 @@ sf::Vector2f Flock::calculateForce(Gameobject* thisObject, FlockingNeighbours ne
 
     steeringF += ((separationF - thisObject->getVelocity()) * separateWeight)
         + ((alignF - thisObject->getVelocity()) * alignWeight)
-              + ((cohereF - thisObject->getVelocity()) * cohesionWeight);
-
+        + ((cohereF - thisObject->getVelocity()) * cohesionWeight);
+    
     steeringF *= 10.0f;
 
     return steeringF;
