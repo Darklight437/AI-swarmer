@@ -54,6 +54,22 @@ void Agent::addSeparate(Gameobject * neighbour)
     Neighbours.separateNeighbours.push_back(neighbour);
 }
 
+void Agent::removeNeighbour(Gameobject * neighbour, NeighbourTyp T)
+{
+    if (T == NeighbourTyp::COHERE)
+    {
+        Neighbours.cohereNeighbours.erase(std::find(Neighbours.cohereNeighbours.begin(), Neighbours.cohereNeighbours.end(), neighbour));
+    }
+    if (T == NeighbourTyp::ALIGN)
+    {
+        Neighbours.alignNeighbours.erase(std::find(Neighbours.alignNeighbours.begin(), Neighbours.alignNeighbours.end(), neighbour));
+    }
+    if (T == NeighbourTyp::SEP)
+    {
+        Neighbours.separateNeighbours.erase(std::find(Neighbours.separateNeighbours.begin(), Neighbours.separateNeighbours.end(), neighbour));
+    }
+}
+
 
 
 void Agent::setTopSpeed(float speed)

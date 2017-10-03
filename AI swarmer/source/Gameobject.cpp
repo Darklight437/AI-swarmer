@@ -96,9 +96,19 @@ Gameobject::~Gameobject()
          {
              myAgent->addAlign(Swarmer);
          }
+         else
+         {
+            // myAgent->
+         }
          if (find2DistFromMe(Swarmer->m_sprite.getPosition()) < 90000)
          {
-
+             myAgent->addCohere(Swarmer);
+             
+         }
+         if (find2DistFromMe(Swarmer->m_sprite.getPosition()) < 100)
+         {
+             myAgent->addSeparate(Swarmer);
+             
          }
          
 

@@ -5,6 +5,7 @@
 #include "Seek.h"
 #include "Flock.h"
 
+enum class NeighbourTyp {COHERE, SEP, ALIGN};
 
 struct FlockingNeighbours
 {
@@ -24,6 +25,7 @@ public:
     void addAlign(Gameobject* neighbour);
     void addCohere(Gameobject* neighbour);
     void addSeparate(Gameobject* neighbour);
+    void removeNeighbour(Gameobject* neighbour, NeighbourTyp T);
     void setTopSpeed(float speed);
 
     Behavior* seekBehavior = new Seek;
