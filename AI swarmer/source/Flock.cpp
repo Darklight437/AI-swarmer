@@ -47,11 +47,11 @@ sf::Vector2f Flock::calculateForce(Gameobject* thisObject, FlockingNeighbours ne
     }
     for each (Gameobject* neighbour in neighbourhood.cohereNeighbours)
     {
-
+        cohereF += cohere(thisObject->m_sprite.getPosition(), neighbour->m_sprite.getPosition());
     }
     for each (Gameobject* neighbour in neighbourhood.separateNeighbours)
     {
-
+        separationF += separation(thisObject->m_sprite.getPosition(), neighbour->m_sprite.getPosition());
     }
 
     //3 of these
@@ -70,6 +70,7 @@ sf::Vector2f Flock::calculateForce(Gameobject* thisObject, FlockingNeighbours ne
               + ((cohereF - thisObject->getVelocity()) * cohesionWeight);
 
     steeringF *= 10.0f;
+
     return steeringF;
 }
 

@@ -33,10 +33,10 @@ sf::Vector2f Agent::getSteeringForce(sf::Vector2f myPosition, sf::Vector2f targe
 sf::Vector2f Agent::getFlockForce(Gameobject* thisObject, sf::Vector2f targetPos)
 {
 
-    sf::Vector2f flockForce;
+    //sf::Vector2f flockForce;
 
-    flockForce = ((Flock*)FlockBehavior)->calculateForce(thisObject, Neighbours, targetPos);
-    return flockForce;
+    //flockForce = 
+    return ((Flock*)FlockBehavior)->calculateForce(thisObject, Neighbours, targetPos);
 }
 
 void Agent::addAlign(Gameobject * neighbour)
@@ -65,11 +65,11 @@ void Agent::removeNeighbour(Gameobject * neighbour, NeighbourTyp T)
     }
     if (T == NeighbourTyp::ALIGN)
     {  
-        Neighbours.cohereNeighbours.remove(neighbour);
+        Neighbours.alignNeighbours.remove(neighbour);
     }
     if (T == NeighbourTyp::SEP)
     {
-        Neighbours.cohereNeighbours.remove(neighbour);
+        Neighbours.separateNeighbours.remove(neighbour);
     }
 }
 
