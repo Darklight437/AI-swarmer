@@ -57,31 +57,19 @@ void Agent::addSeparate(Gameobject * neighbour)
 
 void Agent::removeNeighbour(Gameobject * neighbour, NeighbourTyp T)
 {
-    
+    //auto it is breaking
+    //
     if (T == NeighbourTyp::COHERE)
     {
-         auto it = (std::find(Neighbours.cohereNeighbours.begin(), Neighbours.cohereNeighbours.end(), neighbour));
-         if (it != Neighbours.cohereNeighbours.end())
-         {
-             Neighbours.cohereNeighbours.remove(*it);
-         }
-        
+        Neighbours.cohereNeighbours.remove(neighbour);
     }
     if (T == NeighbourTyp::ALIGN)
-    {
-        auto it = (std::find(Neighbours.alignNeighbours.begin(), Neighbours.alignNeighbours.end(), neighbour));
-        if (it != Neighbours.cohereNeighbours.end())
-        {
-            Neighbours.cohereNeighbours.remove(*it);
-        }
+    {  
+        Neighbours.cohereNeighbours.remove(neighbour);
     }
     if (T == NeighbourTyp::SEP)
     {
-        auto it = (std::find(Neighbours.separateNeighbours.begin(), Neighbours.separateNeighbours.end(), neighbour));
-        if (it != Neighbours.cohereNeighbours.end())
-        {
-            Neighbours.cohereNeighbours.remove(*it);
-        }
+        Neighbours.cohereNeighbours.remove(neighbour);
     }
 }
 
