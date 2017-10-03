@@ -134,7 +134,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
         //get each of the "minions" and draw and steer them
         for each (Gameobject* minion in swarmers)
         {
-            //set up their local naeighbourhoods
+            //set up their local neighbourhoods
             minion->getNeighbours(swarmers);
             
             minion->flock(miniship->m_sprite.getPosition());

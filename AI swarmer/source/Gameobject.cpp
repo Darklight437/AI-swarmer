@@ -98,17 +98,25 @@ Gameobject::~Gameobject()
          }
          else
          {
-            // myAgent->
+             myAgent->removeNeighbour(Swarmer, NeighbourTyp::ALIGN);
          }
          if (find2DistFromMe(Swarmer->m_sprite.getPosition()) < 90000)
          {
              myAgent->addCohere(Swarmer);
              
          }
+         else
+         {
+             myAgent->removeNeighbour(Swarmer, NeighbourTyp::COHERE);
+         }
          if (find2DistFromMe(Swarmer->m_sprite.getPosition()) < 100)
          {
              myAgent->addSeparate(Swarmer);
              
+         }
+         else
+         {
+             myAgent->removeNeighbour(Swarmer, NeighbourTyp::SEP);
          }
          
 
