@@ -31,7 +31,7 @@ sf::Vector2f Flock::calculateForce(Gameobject* thisObject, FlockingNeighbours ne
 
     steeringF = targetPos - thisObject->m_sprite.getPosition();
     steeringF = normalise(steeringF);
-    steeringF *= 10.0f;
+    steeringF *= 4.0f;
     
     
    
@@ -41,9 +41,7 @@ sf::Vector2f Flock::calculateForce(Gameobject* thisObject, FlockingNeighbours ne
     
     for each (Gameobject* neighbour in neighbourhood.alignNeighbours)
     {
-      
        alignF += align(neighbour->getVelocity());
-       
     }
     for each (Gameobject* neighbour in neighbourhood.cohereNeighbours)
     {
@@ -60,13 +58,18 @@ sf::Vector2f Flock::calculateForce(Gameobject* thisObject, FlockingNeighbours ne
     float alignSize = neighbourhood.alignNeighbours.size();
     float cohereSize= neighbourhood.cohereNeighbours.size();
 
-    separationF /= separationSize;
-    alignF /= alignSize;
-    cohereF /= cohereSize;
+
+    //separationF /= separationSize;
+    separationF = separationSize == 0 ? sf::Vector2f(0, 0) : separationF / separationSize;
+    alignF = (alignSize == 0) ? sf::Vector2f(0, 0) : alignF / alignSize;
+    cohereF = cohereSize == 0 ? sf::Vector2f(0, 0) : cohereF / cohereSize;
+
+    //alignF /= alignSize;
+    //cohereF /= cohereSize;
 
 
     steeringF += ((separationF - thisObject->getVelocity()) * separateWeight)
-              + ((alignF - thisObject->getVelocity()) * alignWeight)
+        + ((alignF - thisObject->getVelocity()) * alignWeight)
               + ((cohereF - thisObject->getVelocity()) * cohesionWeight);
 
     steeringF *= 10.0f;
@@ -100,8 +103,8 @@ sf::Vector2f Flock::cohere(sf::Vector2f myPosition, sf::Vector2f neighbourPos)
     return cohesionForce;
 }
 
-std::list<Gameobject*> Flock::getNeighbours(Gameobject* thisSwarmer)
-{
-
-    return std::list<Gameobject*>();
-}
+//std::list<Gameobject*> Flock::getNeighbours(Gameobject* thisSwarmer)
+//{
+//
+//    return std::list<Gameobject*>();
+//}

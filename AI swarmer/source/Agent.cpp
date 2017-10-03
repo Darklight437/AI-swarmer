@@ -80,4 +80,11 @@ void Agent::setTopSpeed(float speed)
     movementSpeed = speed;
 }
 
+void Agent::clearNeighbours()
+{
+    Neighbours.alignNeighbours.clear();
+    Neighbours.cohereNeighbours.clear();
+    Neighbours.separateNeighbours.clear();
+}
+
 

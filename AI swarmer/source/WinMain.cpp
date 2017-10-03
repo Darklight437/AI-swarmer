@@ -122,7 +122,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
 //#################################################################################################################
 
         window.clear();
-        //tell objects to draw here
+        
         
         //moves the objext towards the target this will have the a* as the target eventually
 
@@ -164,7 +164,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine
 
 
         window.display();
-
+        Sleep(0);
     } //end loop
 
 

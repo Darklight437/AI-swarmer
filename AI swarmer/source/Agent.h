@@ -27,7 +27,7 @@ public:
     void addSeparate(Gameobject* neighbour);
     void removeNeighbour(Gameobject* neighbour, NeighbourTyp T);
     void setTopSpeed(float speed);
-
+    void clearNeighbours();
     Behavior* seekBehavior = new Seek;
     Behavior* FlockBehavior = new Flock;
     

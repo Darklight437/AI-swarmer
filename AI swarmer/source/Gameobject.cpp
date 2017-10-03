@@ -78,7 +78,7 @@ Gameobject::~Gameobject()
 
      //then search your locality & add all available nearby swarmers to the list
 
-     m_acceleration = steering;
+     m_acceleration += steering;
      setRotation(angleOfVect(steering));
  }
 
@@ -89,12 +89,12 @@ Gameobject::~Gameobject()
 
  void Gameobject::getNeighbours(std::list<Gameobject*> swarmerList)
  {
-
+     myAgent->clearNeighbours();
      for each (Gameobject* Swarmer in swarmerList)
      {
          if (find2DistFromMe(Swarmer->m_sprite.getPosition()) < 360000)
          {
-             myAgent->addAlign(Swarmer);
+               myAgent->addAlign(Swarmer); 
          }
          else
          {
@@ -104,8 +104,7 @@ Gameobject::~Gameobject()
 
          if (find2DistFromMe(Swarmer->m_sprite.getPosition()) < 90000)
          {
-             myAgent->addCohere(Swarmer);
-             
+                myAgent->addCohere(Swarmer); 
          }
          else
          {
@@ -113,12 +112,11 @@ Gameobject::~Gameobject()
          }
 
 
-         if (find2DistFromMe(Swarmer->m_sprite.getPosition()) < 100)
+         if (find2DistFromMe(Swarmer->m_sprite.getPosition()) < 400)
          {
-             myAgent->addSeparate(Swarmer);
-             
+                 myAgent->addSeparate(Swarmer);   
          }
-         else
+         else if(find2DistFromMe(Swarmer->m_sprite.getPosition()) > 700)
          {
              myAgent->removeNeighbour(Swarmer, NeighbourTyp::SEP);
          }
